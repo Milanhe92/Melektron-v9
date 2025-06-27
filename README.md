@@ -13,4 +13,4 @@ Integracija svih Melektron generacija u jedinstveni sistem neograničenih moguć
 ## 🚀 Brza Instalacija
 1. Kloniraj repozitorijum:
 ```bash
-git clone https://github.com/vaš-username/melekron-v7.git
+git clone https://github.com/vaš-username/melekron-v9.git
