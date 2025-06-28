@@ -1,4 +1,14 @@
 // JavaScript fajlovi će biti dodati kasnije
+// assets/js/simulator.js
+const controls = {
+  speed: 1.0,
+  particleCount: 10000,
+  blackHoleSize: 15
+};
+
+function updateSimulation() {
+  // Implementirajte promene u realnom vremenu
+}
 const onClick = () => {
   const start = Date.now();
   doInterestingWork();
