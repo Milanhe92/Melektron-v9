@@ -729,7 +729,17 @@
             setInterval(() => {
                 const particle = document.createElement('div');
                 particle.classList.add('quantum-particle');
-                
+   
+<section id="contact">
+  <h2>Kontaktirajte Nas</h2>
+  <form name="contact" netlify>
+    <input type="text" name="name" placeholder="Vaše ime" required>
+    <input type="email" name="email" placeholder="Vaš email" required>
+    <textarea name="message" placeholder="Vaša poruka..." rows="5" required></textarea>
+    <button type="submit" class="portal-button">Pošalji</button>
+  </form>
+</section>
+             
                 const size = Math.random() * 3 + 1;
                 const posX = Math.random() * window.innerWidth;
                 const posY = Math.random() * window.innerHeight;
