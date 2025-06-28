@@ -1,0 +1,14 @@
+# Ignoriši sistemske fajlove
+.DS_Store
+Thumbs.db
+
+# Ignoriši node modulove
+node_modules/
+
+# Ignoriši IDE fajlove
+.idea/
+.vscode/
+
+# Ignoriši build artefakte
+dist/
+build/
