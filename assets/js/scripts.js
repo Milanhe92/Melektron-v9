@@ -64,3 +64,31 @@ import { Observability, LDObserve } from "@launchdarkly/observability";
 npm install launchdarkly-js-client-sdk
 npm install @launchdarkly/observabilitynpm install launchdarkly-js-client-sdk
 npm install @launchdarkly/observability
+// Vanta.js background initialization
+function initVanta() {
+    if (typeof VANTA !== 'undefined') {
+        VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x8a2be2,
+            backgroundColor: 0x0a0a18,
+            points: 15.00,
+            maxDistance: 24.00,
+            spacing: 17.00
+        });
+    }
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+    initVanta();
+    
+    // Add other common JavaScript functionality here
+    // (particles, animations, etc.)
+});
