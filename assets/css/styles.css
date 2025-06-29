@@ -1,2 +1,3 @@
 /* CSS fajlovi će biti dodati kasnije */
 curl -X POST -d {} https://api.netlify.com/build_hooks/685f8be0fbb8c10fd91f9d05
+/* Dodati sve CSS stilove iz prethodnog index.html fajla */
