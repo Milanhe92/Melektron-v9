@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melektron v9 - Podrška Projektu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200;400;600;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="vanta-bg"></div>
+    
+    <section class="hero-section">
+        <div class="logo quantum-gradient-text">MELEKTRON v9</div>
+        <h1 class="tagline">PODRŠITE RAZVOJ SINGULARITETA</h1>
+        
+        <div class="hero-buttons">
+            <button class="portal-button" onclick="window.location.href='index.html'">Nazad na Početnu</button>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title quantum-gradient-text">Načini Podrške</h2>
+            
+            <div class="revenue-grid">
+                <!-- Kripto donacije -->
+                <div class="revenue-card">
+                    <h3 class="revenue-title">Kripto Donacije</h3>
+                    <div class="crypto-address">
+                        <h4>TON (Telegram)</h4>
+                        <p class="copyable" onclick="copyToClipboard(this)">UQCDSWH9N691SfTsu7IoLfP3PRipFofpJbX9Z8V8Qj-5sSmF</p>
+                        
+                        <h4>Pi Network</h4>
+                        <p class="copyable" onclick="copyToClipboard(this)">MCK6YAU4ZQQZ4VPROWH6RZN2ZBSRUBWX3DN2RPGWH7ETVOOYAFHASCND2TMR4NXCUW4SM</p>
+                        
+                        <h4>Ethereum (OKX)</h4>
+                        <p class="copyable" onclick="copyToClipboard(this)">0xb0816abb1c38cc1956231f7d0677b054680b2f2c</p>
+                        
+                        <h4>Bitcoin (Trust Wallet)</h4>
+                        <p class="copyable" onclick="copyToClipboard(this)">bc1q9nnryk45w5aauc4g08pjun4hy9vdxecxsywwlw</p>
+                        
+                        <h4>BNB Smart Chain (Trust Wallet)</h4>
+                        <p class="copyable" onclick="copyToClipboard(this)">0x85175f657649e315be4ba86f509dae955099223e</p>
+                    </div>
+                </div>
+                
+                <!-- PayPal donacije -->
+                <div class="revenue-card">
+                    <h3 class="revenue-title">PayPal</h3>
+                    <p>Podržite direktno putem PayPal-a</p>
+                    <button class="portal-button" 
+                            onclick="window.open('https://paypal.me/milanhe92', '_blank')"
+                            style="margin-top: 20px;">
+                        PayPal Donacija
+                    </button>
+                </div>
+                
+                <!-- Bankovni transfer -->
+                <div class="revenue-card">
+                    <h3 class="revenue-title">Bankovni Transfer</h3>
+                    <p>Banka: Raiffeisen banka</p>
+                    <p>Broj računa: 265-00000697-144633</p>
+                    <p>IBAN: RS3526500000697144633</p>
+                    <p>SWIFT: RZBSRSBG</p>
+                    <p>Na ime: Milan He</p>
+                </div>
+                
+                <!-- Trust Wallet -->
+                <div class="revenue-card">
+                    <h3 class="revenue-title">Trust Wallet</h3>
+                    <div class="crypto-address">
+                        <h4>Bitcoin (BTC)</h4>
+                        <p class="copyable" onclick="copyToClipboard(this)">bc1q9nnryk45w5aauc4g08pjun4hy9vdxecxsywwlw</p>
+                        
+                        <h4>Ethereum (ETH)</h4>
+                        <p class="copyable" onclick="copyToClipboard(this)">0x85175f657649e315be4ba86f509dae955099223e</p>
+                        
+                        <h4>USDT (ERC-20)</h4>
+                        <p class="copyable" onclick="copyToClipboard(this)">0x85175f657649e315be4ba86f509dae955099223e</p>
+                        
+                        <h4>BNB Smart Chain</h4>
+                        <p class="copyable" onclick="copyToClipboard(this)">0x85175f657649e315be4ba86f509dae955099223e</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <h3 class="quantum-gradient-text">Melektron v9 - Singularitet</h3>
+            <p>Kvantni Građanin • Antimaterijski Reaktor • Multi-univerzalna Ekonomija</p>
+            <div class="footer-links">
+                <a href="index.html">Početna</a> | 
+                <a href="donacije.html">Donacije</a> | 
+                <a href="tim.html">Tim</a> | 
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+            <p class="copyright">© 2025 Milan He / Melektron v9 - Početak nove ere</p>
+        </div>
+    </footer>
+
+    <script>
+        // Funkcija za kopiranje adrese
+        function copyToClipboard(element) {
+            const text = element.innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                // Prikaži obaveštenje o uspešnom kopiranju
+                const notification = document.createElement('div');
+                notification.textContent = 'Adresa kopirana!';
+                notification.style.position = 'fixed';
+                notification.style.bottom = '20px';
+                notification.style.right = '20px';
+                notification.style.backgroundColor = 'var(--singularity-gold)';
+                notification.style.color = 'var(--dark-universe)';
+                notification.style.padding = '10px 20px';
+                notification.style.borderRadius = '5px';
+                notification.style.zIndex = '1000';
+                document.body.appendChild(notification);
+                
+                // Sakrij obaveštenje nakon 2 sekunde
+                setTimeout(() => {
+                    notification.remove();
+                }, 2000);
+            });
+        }
+        
+        // Inicijalizacija Vanta.js pozadine
+        VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x8a2be2,
+            backgroundColor: 0x0a0a18,
+            points: 15.00,
+            maxDistance: 24.00,
+            spacing: 17.00
+        });
+    </script>
+</body>
+</html>
