@@ -1,18 +1,2 @@
 http://melektron.com/* https://melektron.com/:splat 301!
-Ивицаeleventy
-{
-  "version": "2.0.0",
-  "generator": "Eleventy v2.0.0",
-  "env": {
-    "source": "edge"
-  },
-  "edge": {
-    "method": "get",
-    "path": "/",
-    "query": {},
-    "cookies": {},
-    "referer": null,
-    "saveData": false
-  }
-}
-/*    /index.html    200
+
