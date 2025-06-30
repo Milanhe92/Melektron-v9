@@ -502,7 +502,55 @@
             </div>
         </div>
     </section>
-    
+
+<section id="contact" class="section">
+    <div class="container" style="max-width: 800px; margin: 0 auto; padding: 2rem;">
+        <h2 class="section-title quantum-gradient-text" style="font-size: 3.5rem; margin-bottom: 3rem; text-align: center; font-family: 'Orbitron', sans-serif;">Kontakt</h2>
+        
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="text-align: left;">
+            <input type="hidden" name="form-name" value="contact">
+            <p class="hidden">
+                <label>Ne popunjavajte ovo polje: <input name="bot-field"></label>
+            </p>
+            
+            <div style="margin-bottom: 1.5rem;">
+                <label for="name" style="display: block; margin-bottom: 0.5rem; color: #00bfff; font-family: 'Orbitron', sans-serif;">Ime:</label>
+                <input type="text" id="name" name="name" required 
+                       style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid #00bfff; 
+                       color: white; padding: 1rem; border-radius: 10px; font-size: 1.1rem;"
+                       placeholder="Vaše ime">
+            </div>
+            
+            <div style="margin-bottom: 1.5rem;">
+                <label for="email" style="display: block; margin-bottom: 0.5rem; color: #00bfff; font-family: 'Orbitron', sans-serif;">Email:</label>
+                <input type="email" id="email" name="email" required 
+                       style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid #00bfff; 
+                       color: white; padding: 1rem; border-radius: 10px; font-size: 1.1rem;"
+                       placeholder="Vaš email">
+            </div>
+            
+            <div style="margin-bottom: 2rem;">
+                <label for="message" style="display: block; margin-bottom: 0.5rem; color: #00bfff; font-family: 'Orbitron', sans-serif;">Poruka:</label>
+                <textarea id="message" name="message" rows="6" required 
+                          style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid #00bfff; 
+                          color: white; padding: 1rem; border-radius: 10px; font-size: 1.1rem;"
+                          placeholder="Vaša poruka..."></textarea>
+            </div>
+            
+            <div style="text-align: center;">
+                <button type="submit" 
+                        style="display: inline-block; padding: 1rem 2.5rem; font-size: 1.2rem; 
+                        font-family: 'Orbitron', sans-serif; background: linear-gradient(135deg, #8a2be2, #00bfff); 
+                        border: none; border-radius: 50px; color: white; cursor: pointer; 
+                        transition: all 0.3s ease; margin-top: 1rem;"
+                        onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0 15px rgba(0,191,255,0.7)'"
+                        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                    Pošalji
+                </button>
+            </div>
+        </form>
+    </div>
+</section>    
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
