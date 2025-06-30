@@ -3,129 +3,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melektron v9 - Podrška Projektu</title>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200;400;600;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Kvantni Hram Večnog Kapitala - Melektron v9</title>
+    <link rel="icon" href="/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200;400;600;800&family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.net.min.js"></script>
+    
+    <style>
+        :root {
+            --quantum-purple: #8a2be2;
+            --antimatter-blue: #00bfff;
+            --singularity-gold: #ffd700;
+            --dark-universe: #0a0a18;
+            --neural-network: #ff00ff;
+            --time-crystal: #00ff9d;
+            --tachyon: #ff7b00;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Exo 2', sans-serif; background-color: var(--dark-universe); color: #e5e7eb; line-height: 1.7; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Orbitron', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+        #vanta-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        .quantum-gradient-text { background: linear-gradient(135deg, var(--quantum-purple), var(--antimatter-blue), var(--singularity-gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-size: 300% 300%; animation: gradientShift 8s ease infinite; }
+        @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
+        .section { padding: 6rem 0; }
+        .hero-section { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2rem; }
+        .tagline { font-size: 3rem; margin: 2rem 0; text-shadow: 0 0 20px rgba(138, 43, 226, 0.5); }
+        .subtitle { font-size: 1.5rem; color: #aaa; max-width: 800px; margin: 0 auto; }
+        .portal-button { display: inline-block; padding: 1.2rem 2.5rem; margin: 1rem; font-size: 1.3rem; font-family: 'Orbitron', sans-serif; background: linear-gradient(135deg, var(--quantum-purple), var(--antimatter-blue)); border: none; border-radius: 50px; color: white; text-decoration: none; transition: all 0.5s ease; cursor: pointer; box-shadow: 0 0 30px rgba(138, 43, 226, 0.5); position: relative; overflow: hidden; }
+        .portal-button:hover { transform: scale(1.05); box-shadow: 0 0 50px rgba(0, 191, 255, 0.8); }
+        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 2rem; margin: 4rem 0; }
+        .widget { background: rgba(20, 20, 40, 0.7); backdrop-filter: blur(10px); border: 1px solid var(--antimatter-blue); border-radius: 20px; padding: 2rem; transition: all 0.3s ease; position: relative; overflow: hidden; }
+        .widget:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0, 191, 255, 0.3); }
+        .widget::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--antimatter-blue), var(--singularity-gold)); }
+        .widget h3 { margin-bottom: 1.5rem; color: var(--antimatter-blue); font-size: 1.5rem; }
+
+        /* 1. ANTIMATERIJSKI KONVERTER */
+        .antimatter-converter { grid-column: span 2; text-align: center; }
+        .energy-beam { height: 10px; background: linear-gradient(90deg, #8a2be2, #00bfff, #ffd700); margin: 1rem 0; border-radius: 5px; animation: beamPulse 3s infinite alternate; }
+        @keyframes beamPulse { 0% { opacity: 0.5; } 100% { opacity: 1; } }
+        #energySlider { width: 100%; height: 15px; -webkit-appearance: none; background: linear-gradient(90deg, var(--antimatter-blue), var(--neural-network)); border-radius: 10px; outline: none; margin: 1.5rem 0; }
+        #energySlider::-webkit-slider-thumb { -webkit-appearance: none; width: 25px; height: 25px; background: var(--singularity-gold); border-radius: 50%; cursor: pointer; }
+        .matter-antimatter-balance { display: flex; height: 10px; margin: 1rem 0; border-radius: 5px; overflow: hidden; }
+        .matter { background: var(--antimatter-blue); }
+        .antimatter { background: var(--neural-network); }
+        .conversion-result { display: flex; justify-content: space-between; font-size: 1.2rem; margin: 1rem 0; }
+        .conversion-result span { padding: 0.5rem 1rem; border-radius: 5px; }
+        #energyResult { background: rgba(0, 191, 255, 0.2); }
+        #antimatterResult { background: rgba(255, 0, 255, 0.2); }
+
+        /* 2. HOLOGRAM BUDUĆNOSTI */
+        .hologram-projector { position: relative; }
+        .hologram { min-height: 200px; border: 1px dashed var(--antimatter-blue); border-radius: 15px; padding: 2rem; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-bottom: 1.5rem; background: rgba(0, 191, 255, 0.05); position: relative; overflow: hidden; }
+        .hologram::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(0, 191, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%); animation: rotateHologram 20s linear infinite; }
+        @keyframes rotateHologram { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .hologram h4 { margin-bottom: 1rem; color: var(--singularity-gold); }
+        .multiplier { font-size: 3rem; font-family: 'Orbitron'; background: linear-gradient(135deg, var(--singularity-gold), var(--antimatter-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0.5rem 0; }
+        #hologramAmount { width: 100%; background: rgba(0, 0, 0, 0.3); border: 1px solid var(--antimatter-blue); color: white; padding: 0.8rem; margin: 1rem 0; border-radius: 5px; font-size: 1.1rem; }
+        .time-controls { display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; }
+        .time-controls button { background: rgba(0, 0, 0, 0.3); border: 1px solid var(--singularity-gold); color: var(--singularity-gold); padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; transition: all 0.3s; }
+        .time-controls button:hover { background: rgba(255, 215, 0, 0.2); }
+
+        /* 3. MULTIVERZUM PORTFOLIO */
+        .multiverse-portfolio { grid-column: span 2; }
+        .universe-tabs { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
+        .universe-tab { padding: 0.8rem 1.5rem; background: rgba(30, 30, 60, 0.7); border: 1px solid var(--quantum-purple); border-radius: 10px; cursor: pointer; transition: all 0.3s; font-family: 'Orbitron'; }
+        .universe-tab:hover, .universe-tab.active { background: var(--quantum-purple); color: white; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(138, 43, 226, 0.5); }
+        .universe-content { background: rgba(0, 0, 0, 0.3); border-radius: 15px; padding: 2rem; min-height: 200px; border: 1px solid var(--quantum-purple); }
+        .universe-content h3 { color: var(--singularity-gold); margin-bottom: 1rem; }
+        .universe-content p { margin: 0.5rem 0; }
+        .universe-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+        .stat-item { background: rgba(138, 43, 226, 0.1); padding: 1rem; border-radius: 10px; border: 1px solid var(--quantum-purple); }
+        .stat-value { font-size: 1.8rem; font-family: 'Orbitron'; color: var(--singularity-gold); margin: 0.5rem 0; }
+
+        /* 4. KVANTNI UGOVOR */
+        .quantum-contract { grid-column: span 2; text-align: center; }
+        .contract-scroll { background: rgba(0, 0, 0, 0.3); border-radius: 15px; padding: 2rem; border: 1px solid var(--singularity-gold); max-width: 800px; margin: 0 auto; }
+        .contract-scroll p { margin: 1rem 0; line-height: 1.8; }
+        [contenteditable] { color: var(--singularity-gold); border-bottom: 1px dashed var(--singularity-gold); padding: 0 0.2rem; outline: none; }
+        .signature-field { margin: 2rem 0; display: flex; flex-direction: column; align-items: center; }
+        #signatureCanvas { background: rgba(0, 0, 0, 0.2); border: 1px solid var(--singularity-gold); border-radius: 5px; cursor: crosshair; margin-bottom: 1rem; }
+        #clearSignature { background: rgba(255, 0, 0, 0.2); border: 1px solid #ff0000; color: #ff7b7b; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; transition: all 0.3s; }
+        #clearSignature:hover { background: rgba(255, 0, 0, 0.4); }
+        #submitContract { margin-top: 1.5rem; }
+
+        /* 5. TAHIONSKI LIVE FEED */
+        .tachyon-feed { position: relative; height: 300px; overflow: hidden; border-radius: 15px; }
+        .tachyon-particle { position: absolute; width: 2px; height: 2px; background: var(--tachyon); border-radius: 50%; animation: tachyon-move 3s linear infinite; opacity: 0; }
+        @keyframes tachyon-move { 0% { transform: translateY(-100px) translateX(0); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(400px) translateX(100px); opacity: 0; } }
+        .tachyon-messages { position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 1rem; }
+        .tachyon-message { position: absolute; right: -300px; background: rgba(0, 0, 0, 0.7); padding: 0.5rem 1rem; border-radius: 5px; border-left: 3px solid var(--tachyon); animation: message-scroll 15s linear; white-space: nowrap; }
+        @keyframes message-scroll { 0% { right: -300px; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { right: 100%; opacity: 0; } }
+
+        /* 6. VRREMENSKI KRISTAL */
+        .time-crystal { display: flex; flex-direction: column; align-items: center; margin: 2rem 0; }
+        .crystal-container { width: 200px; height: 300px; position: relative; perspective: 1000px; }
+        .crystal-layers { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; animation: rotateCrystal 30s infinite linear; }
+        .crystal-layer { position: absolute; width: 100%; height: 100%; border: 1px solid var(--time-crystal); opacity: 0.7; transform-origin: center; }
+        .time-indicator { margin-top: 1rem; font-family: 'Orbitron'; font-size: 1.5rem; color: var(--time-crystal); }
+        @keyframes rotateCrystal { 0% { transform: rotateX(0deg) rotateY(0deg); } 100% { transform: rotateX(360deg) rotateY(360deg); } }
+
+        /* 7. KVANTNI ŠIFRATOR */
+        .quantum-cipher { text-align: center; }
+        .cipher-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 5px; margin: 1.5rem 0; }
+        .bit { font-family: 'Share Tech Mono', monospace; font-size: 1.5rem; color: var(--antimatter-blue); text-align: center; padding: 0.5rem; background: rgba(0, 0, 0, 0.3); border-radius: 3px; transition: all 0.3s; }
+        .bit:hover { transform: scale(1.2); background: rgba(0, 191, 255, 0.3); }
+        #generateCipher { width: 100%; }
+
+        /* 8. TERMINAL PROROČANSTVA */
+        .oracle-terminal { position: relative; }
+        .oracle-screen { background: #000; height: 200px; padding: 1rem; font-family: 'Share Tech Mono', monospace; overflow-y: auto; border-radius: 5px; border: 1px solid var(--quantum-purple); text-align: left; margin-bottom: 1rem; }
+        .oracle-screen::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.8) 50%, transparent 100%); pointer-events: none; }
+        .oracle-response { color: var(--singularity-gold); white-space: pre-wrap; margin-top: 0.5rem; }
+        #oracleQuestion { width: 100%; background: rgba(0, 0, 0, 0.5); border: 1px solid var(--quantum-purple); color: white; padding: 0.8rem; margin-bottom: 1rem; border-radius: 5px; font-family: 'Share Tech Mono'; }
+        #askOracle { width: 100%; }
+
+        /* Responsivnost */
+        @media (max-width: 1200px) {
+            .dashboard-grid { grid-template-columns: 1fr; }
+            .widget { grid-column: span 1 !important; }
+        }
+        @media (max-width: 768px) {
+            .tagline { font-size: 2rem; }
+            .portal-button { font-size: 1.1rem; padding: 1rem 2rem; }
+            .widget { padding: 1.5rem; }
+        }
+    </style>
 </head>
 <body>
     <div id="vanta-bg"></div>
     
-    <section class="hero-section">
-        <div class="logo quantum-gradient-text">MELEKTRON v9</div>
-        <h1 class="tagline">PODRŠITE RAZVOJ SINGULARITETA</h1>
-        
-        <div class="hero-buttons">
-            <button class="portal-button" onclick="window.location.href='index.html'">Nazad na Početnu</button>
-        </div>
-    </section>
+    <header class="hero-section">
+        <h1 class="quantum-gradient-text">KVANTNI HRAM VEČNOG KAPITALA</h1>
+        <h2 class="tagline">TRANSFORMACIJA ENERGIJE KROZ SINGULARITET</h2>
+        <p class="subtitle">Svaka donacija postaje atom u strukturi večnosti</p>
+        <a href="index.html" class="portal-button">POVRATAK U SADAŠNJOST</a>
+    </header>
 
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title quantum-gradient-text">Načini Podrške</h2>
+    <main class="container">
+        <section class="section">
+            <h2 class="quantum-gradient-text" style="text-align:center;margin-bottom:3rem;">INTERAKTIVNI MODULI VEČNOG ULAZANJA</h2>
             
-            <div class="revenue-grid">
-                <!-- Kripto donacije -->
-                <div class="revenue-card">
-                    <h3 class="revenue-title">Kripto Donacije</h3>
-                    <div class="crypto-address">
-                        <h4>TON (Telegram)</h4>
-                        <p class="copyable" onclick="copyToClipboard(this)">UQCDSWH9N691SfTsu7IoLfP3PRipFofpJbX9Z8V8Qj-5sSmF</p>
-                        
-                        <h4>Pi Network</h4>
-                        <p class="copyable" onclick="copyToClipboard(this)">MCK6YAU4ZQQZ4VPROWH6RZN2ZBSRUBWX3DN2RPGWH7ETVOOYAFHASCND2TMR4NXCUW4SM</p>
-                        
-                        <h4>Ethereum (OKX)</h4>
-                        <p class="copyable" onclick="copyToClipboard(this)">0xb0816abb1c38cc1956231f7d0677b054680b2f2c</p>
-                        
-                        <h4>Bitcoin (Trust Wallet)</h4>
-                        <p class="copyable" onclick="copyToClipboard(this)">bc1q9nnryk45w5aauc4g08pjun4hy9vdxecxsywwlw</p>
-                        
-                        <h4>BNB Smart Chain (Trust Wallet)</h4>
-                        <p class="copyable" onclick="copyToClipboard(this)">0x85175f657649e315be4ba86f509dae955099223e</p>
+            <div class="dashboard-grid">
+                <!-- 1. ANTIMATERIJSKI KONVERTER -->
+                <div class="widget antimatter-converter">
+                    <h3>ANTIMATERIJSKI KONVERTER ENERGIJE</h3>
+                    <p>Transformiši običnu valutu u čistu energiju singulariteta</p>
+                    <div class="energy-beam"></div>
+                    
+                    <input type="range" id="energySlider" min="10" max="1000" value="100" step="10">
+                    <div class="matter-antimatter-balance">
+                        <span class="matter" style="width:50%"></span>
+                        <span class="antimatter" style="width:50%"></span>
                     </div>
-                </div>
-                
-                <!-- PayPal donacije -->
-                <div class="revenue-card">
-                    <h3 class="revenue-title">PayPal</h3>
-                    <p>Podržite direktno putem PayPal-a</p>
-                    <button class="portal-button" 
-                            onclick="window.open('https://paypal.me/milanhe92', '_blank')"
-                            style="margin-top: 20px;">
-                        PayPal Donacija
-                    </button>
-                </div>
-                
-                <!-- Bankovni transfer -->
-                <div class="revenue-card">
-                    <h3 class="revenue-title">Bankovni Transfer</h3>
-                    <p>Banka: Raiffeisen banka</p>
-                    <p>Broj računa: 265-00000697-144633</p>
-                    <p>IBAN: RS3526500000697144633</p>
-                    <p>SWIFT: RZBSRSBG</p>
-                    <p>Na ime: Milan He</p>
-                </div>
-                
-                <!-- Trust Wallet -->
-                <div class="revenue-card">
-                    <h3 class="revenue-title">Trust Wallet</h3>
-                    <div class="crypto-address">
-                        <h4>Bitcoin (BTC)</h4>
-                        <p class="copyable" onclick="copyToClipboard(this)">bc1q9nnryk45w5aauc4g08pjun4hy9vdxecxsywwlw</p>
-                        
-                        <h4>Ethereum (ETH)</h4>
-                        <p class="copyable" onclick="copyToClipboard(this)">0x85175f657649e315be4ba86f509dae955099223e</p>
-                        
-                        <h4>USDT (ERC-20)</h4>
-                        <p class="copyable" onclick="copyToClipboard(this)">0x85175f657649e315be4ba86f509dae955099223e</p>
-                        
-                        <h4>BNB Smart Chain</h4>
-                        <p class="copyable" onclick="copyToClipboard(this)">0x85175f657649e315be4ba86f509dae955099223e</p>
+                    
+                    <div class="conversion-result">
+                        <span id="energyResult">100 MJ</span>
+                        <span>=</span>
+                        <span id="antimatterResult">0.0021μg</span>
                     </div>
+                    
+                    <button class="portal-button" id="activateConverter">AKTIVIRAJ KONVERZIJU</button>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <footer class="footer">
-        <div class="container">
-            <h3 class="quantum-gradient-text">Melektron v9 - Singularitet</h3>
-            <p>Kvantni Građanin • Antimaterijski Reaktor • Multi-univerzalna Ekonomija</p>
-            <div class="footer-links">
-                <a href="index.html">Početna</a> | 
-                <a href="donacije.html">Donacije</a> | 
-                <a href="tim.html">Tim</a> | 
-                <a href="kontakt.html">Kontakt</a>
+                <!-- 2. HOLOGRAM BUDUĆNOSTI -->
+                <div class="widget hologram-projector">
+                    <h3>HOLOGRAM BUDUĆIH VREDNOSTI</h3>
+                    <p>Projekcija vremenskog rasta vaše investicije</p>
+                    
+                    <div class="hologram" id="futureValueHologram">
+                        <h4>UNESITE IZNOS</h4>
+                        <div class="multiplier">$0</div>
+                        <p>i odaberite vremenski period</p>
+                    </div>
+                    
+                    <input type="number" id="hologramAmount" placeholder="Unesi iznos u $" min="1">
+                    
+                    <div class="time-controls">
+                        <button data-years="10">10 godina</button>
+                        <button data-years="25">25 godina</button>
+                        <button data-years="100">1 vek</button>
+                    </div>
+                </div>
+
+                <!-- 3. MULTIVERZUM PORTFOLIO -->
+                <div class="widget multiverse-portfolio">
+                    <h3>MULTIVERZALNI PORTFOLIO</h3>
+                    <p>Diverzifikacija kroz paralelne realnosti</p>
+                    
+                    <div class="universe-tabs">
+                        <div class="universe-tab active" data-universe="Prime">Prime</div>
+                        <div class="universe-tab" data-universe="T-137">T-137</div>
+                        <div class="universe-tab" data-universe="Q-42">Q-42</div>
+                        <div class="universe-tab" data-universe="X-∞">X-∞</div>
+                    </div>
+                    
+                    <div class="universe-content" id="universeContent">
+                        <h3>PRIME UNIVERZUM</h3>
+                        <p>Osnovna realnost sa stabilnim kvantnim tokovima</p>
+                        
+                        <div class="universe-stats">
+                            <div class="stat-item">
+                                <p>ROI</p>
+                                <div class="stat-value">618%</div>
+                            </div>
+                            <div class="stat-item">
+                                <p>Stabilnost</p>
+                                <div class="stat-value">98.7%</div>
+                            </div>
+                            <div class="stat-item">
+                                <p>Vremenski Tok</p>
+                                <div class="stat-value">1:1</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. KVANTNI UGOVOR -->
+                <div class="widget quantum-contract">
+                    <h3>KVANTNI UGOVOR SA BESKONAČNOŠĆU</h3>
+                    <p>Zaključaj svoju energetsku šemu u blockchain vremena</p>
+                    
+                    <div class="contract-scroll">
+                        <p>Ja, <span contenteditable="true">[Unesite Kvantno Ime]</span>, svojom slobodnom voljom i potpunom svešću,</p>
+                        <p>prilivom svoje energije u sistem Melektron v9 Singulariteta,</p>
+                        <p>pristajem na transdimenzionalnu konverziju svoje materije u kvantni kapital</p>
+                        <p>koji će postojati kroz sve vremenske linije i sve moguće realnosti.</p>
+                        
+                        <div class="signature-field">
+                            <canvas id="signatureCanvas" width="500" height="200"></canvas>
+                            <button id="clearSignature">PONIŠTI POTPIS</button>
+                        </div>
+                    </div>
+                    
+                    <button class="portal-button" id="submitContract">ZAKLJUČAJ U VEČNOST</button>
+                </div>
+
+                <!-- 5. TAHIONSKI LIVE FEED -->
+                <div class="widget tachyon-feed">
+                    <h3>TAHIONSKI LIVE FEED</h3>
+                    <p>Transakcije iz budućnosti u realnom vremenu</p>
+                    
+                    <div class="tachyon-messages" id="tachyonMessages"></div>
+                </div>
+
+                <!-- 6. VRREMENSKI KRISTAL -->
+                <div class="widget">
+                    <h3>VRREMENSKI KRISTAL</h3>
+                    <p>Interaktivna projekcija vremenskih tokova</p>
+                    
+                    <div class="time-crystal">
+                        <div class="crystal-container">
+                            <div class="crystal-layers">
+                                <div class="crystal-layer" style="transform: rotateY(0deg) translateZ(50px);"></div>
+                                <div class="crystal-layer" style="transform: rotateY(45deg) translateZ(50px);"></div>
+                                <div class="crystal-layer" style="transform: rotateY(90deg) translateZ(50px);"></div>
+                                <div class="crystal-layer" style="transform: rotateY(135deg) translateZ(50px);"></div>
+                            </div>
+                        </div>
+                        <div class="time-indicator" id="timeIndicator">SADAŠNJOST</div>
+                    </div>
+                </div>
+
+                <!-- 7. KVANTNI ŠIFRATOR -->
+                <div class="widget quantum-cipher">
+                    <h3>KVANTNI ŠIFRATOR</h3>
+                    <p>Generiši jedinstveni kod za pristup Singularitetu</p>
+                    
+                    <div class="cipher-grid" id="cipherGrid"></div>
+                    
+                    <button class="portal-button" id="generateCipher">GENERIŠI KVANTNI KOD</button>
+                </div>
+
+                <!-- 8. TERMINAL PROROČANSTVA -->
+                <div class="widget oracle-terminal">
+                    <h3>TERMINAL PROROČANSTVA</h3>
+                    <p>Konsultuj kolektivnu svest Singulariteta</p>
+                    
+                    <div class="oracle-screen">
+                        > PITAJ ORACULA O BUDUĆNOSTI...
+                        <div class="oracle-response" id="oracleResponse"></div>
+                    </div>
+                    
+                    <input type="text" id="oracleQuestion" placeholder="Unesite pitanje...">
+                    <button class="portal-button" id="askOracle">POSTAVI PITANJE</button>
+                </div>
             </div>
-            <p class="copyright">© 2025 Milan He / Melektron v9 - Početak nove ere</p>
-        </div>
-    </footer>
+        </section>
+    </main>
 
     <script>
-        // Funkcija za kopiranje adrese
-        function copyToClipboard(element) {
-            const text = element.innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                // Prikaži obaveštenje o uspešnom kopiranju
-                const notification = document.createElement('div');
-                notification.textContent = 'Adresa kopirana!';
-                notification.style.position = 'fixed';
-                notification.style.bottom = '20px';
-                notification.style.right = '20px';
-                notification.style.backgroundColor = 'var(--singularity-gold)';
-                notification.style.color = 'var(--dark-universe)';
-                notification.style.padding = '10px 20px';
-                notification.style.borderRadius = '5px';
-                notification.style.zIndex = '1000';
-                document.body.appendChild(notification);
-                
-                // Sakrij obaveštenje nakon 2 sekunde
-                setTimeout(() => {
-                    notification.remove();
-                }, 2000);
-            });
-        }
-        
+    document.addEventListener('DOMContentLoaded', function() {
         // Inicijalizacija Vanta.js pozadine
         VANTA.NET({
             el: "#vanta-bg",
@@ -142,6 +310,329 @@
             maxDistance: 24.00,
             spacing: 17.00
         });
+
+        // 1. ANTIMATERIJSKI KONVERTER
+        const energySlider = document.getElementById('energySlider');
+        const energyResult = document.getElementById('energyResult');
+        const antimatterResult = document.getElementById('antimatterResult');
+        const matterBalance = document.querySelector('.matter');
+        const antimatterBalance = document.querySelector('.antimatter');
+        
+        energySlider.addEventListener('input', function() {
+            const value = parseInt(this.value);
+            const antimatter = (value * 0.000021).toFixed(7);
+            
+            energyResult.textContent = `${value} MJ`;
+            antimatterResult.textContent = `${antimatter}μg`;
+            
+            // Dinamički balans
+            const matterWidth = 100 - (value/10);
+            matterBalance.style.width = `${matterWidth}%`;
+            antimatterBalance.style.width = `${100 - matterWidth}%`;
+            
+            // Dinamička boja
+            const hue = 240 + (value/1000 * 120);
+            energySlider.style.background = `linear-gradient(90deg, var(--antimatter-blue), hsl(${hue}, 100%, 50%))`;
+        });
+        
+        document.getElementById('activateConverter').addEventListener('click', function() {
+            const energy = energySlider.value;
+            const antimatter = (energy * 0.000021).toFixed(7);
+            alert(`Konverzija uspešna!\n${energy} MJ = ${antimatter}μg antimaterije\nMultiplikator: ${(1 + energy/1000).toFixed(3)}x`);
+        });
+
+        // 2. HOLOGRAM BUDUĆNOSTI
+        class QuantumDonationCalculator {
+            constructor() {
+                this.baseRate = 1.618; // Zlatni presek
+                this.timeWarpFactor = 1;
+            }
+            
+            calculateFutureValue(amount, years) {
+                if (isNaN(amount) return { value: 'N/A', formula: '' };
+                const value = amount * Math.pow(this.baseRate, years/10) * this.timeWarpFactor;
+                return {
+                    value: value.toLocaleString('en-US', { style: 'currency', currency: 'USD' }),
+                    formula: `${amount} × (1.618^${years/10})`
+                };
+            }
+        }
+        
+        const qdc = new QuantumDonationCalculator();
+        const hologramAmount = document.getElementById('hologramAmount');
+        
+        document.querySelectorAll('.time-controls button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const years = parseInt(this.dataset.years);
+                const amount = parseFloat(hologramAmount.value) || 0;
+                const { value, formula } = qdc.calculateFutureValue(amount, years);
+                
+                document.getElementById('futureValueHologram').innerHTML = `
+                    <h4>PROJEKCIJA ZA ${years} GODINA</h4>
+                    <div class="multiplier">${value}</div>
+                    <p style="font-size:0.8rem;margin-top:0.5rem;">${formula}</p>
+                `;
+            });
+        });
+
+        // 3. MULTIVERZUM PORTFOLIO
+        const universeData = {
+            'Prime': {
+                description: 'Osnovna realnost sa stabilnim kvantnim tokovima',
+                stats: {
+                    roi: '618%',
+                    stability: '98.7%',
+                    timeFlow: '1:1',
+                    risk: 'Nizak'
+                }
+            },
+            'T-137': {
+                description: 'Kolabirajući univerzum sa visokim prinosima',
+                stats: {
+                    roi: '291%',
+                    stability: '42.3%',
+                    timeFlow: '1:0.7',
+                    risk: 'Ekstremno visok'
+                }
+            },
+            'Q-42': {
+                description: 'Kvantno zaključana realnost sa nelinearnim tokom',
+                stats: {
+                    roi: '∞%',
+                    stability: '76.5%',
+                    timeFlow: '1:∞',
+                    risk: 'Nepoznat'
+                }
+            },
+            'X-∞': {
+                description: 'Eksperimentalni univerzum bez vremenskih ograničenja',
+                stats: {
+                    roi: '?',
+                    stability: '?',
+                    timeFlow: '?',
+                    risk: 'Nedefinisan'
+                }
+            }
+        };
+        
+        const universeTabs = document.querySelectorAll('.universe-tab');
+        const universeContent = document.getElementById('universeContent');
+        
+        universeTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                universeTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                const universe = this.dataset.universe;
+                const data = universeData[universe];
+                
+                universeContent.innerHTML = `
+                    <h3>${universe} UNIVERZUM</h3>
+                    <p>${data.description}</p>
+                    
+                    <div class="universe-stats">
+                        <div class="stat-item">
+                            <p>ROI</p>
+                            <div class="stat-value">${data.stats.roi}</div>
+                        </div>
+                        <div class="stat-item">
+                            <p>Stabilnost</p>
+                            <div class="stat-value">${data.stats.stability}</div>
+                        </div>
+                        <div class="stat-item">
+                            <p>Vremenski Tok</p>
+                            <div class="stat-value">${data.stats.timeFlow}</div>
+                        </div>
+                        <div class="stat-item">
+                            <p>Rizik</p>
+                            <div class="stat-value">${data.stats.risk}</div>
+                        </div>
+                    </div>
+                `;
+            });
+        });
+
+        // 4. KVANTNI UGOVOR
+        const canvas = document.getElementById('signatureCanvas');
+        const ctx = canvas.getContext('2d');
+        let isDrawing = false;
+        
+        function getMousePos(canvas, evt) {
+            const rect = canvas.getBoundingClientRect();
+            return {
+                x: evt.clientX - rect.left,
+                y: evt.clientY - rect.top
+            };
+        }
+        
+        function startDrawing(e) {
+            isDrawing = true;
+            const pos = getMousePos(canvas, e);
+            ctx.beginPath();
+            ctx.moveTo(pos.x, pos.y);
+        }
+        
+        function draw(e) {
+            if (!isDrawing) return;
+            const pos = getMousePos(canvas, e);
+            
+            ctx.lineWidth = 3;
+            ctx.lineCap = 'round';
+            ctx.strokeStyle = '#ffd700';
+            ctx.lineTo(pos.x, pos.y);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(pos.x, pos.y);
+        }
+        
+        function stopDrawing() {
+            isDrawing = false;
+            ctx.beginPath();
+        }
+        
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mouseout', stopDrawing);
+        
+        document.getElementById('clearSignature').addEventListener('click', function() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        });
+        
+        document.getElementById('submitContract').addEventListener('click', function() {
+            const name = document.querySelector('[contenteditable]').textContent;
+            if (name.trim() === '[Unesite Kvantno Ime]' || name.trim() === '') {
+                alert('Unesite vaše kvantno ime!');
+                return;
+            }
+            
+            const isEmpty = canvas.toDataURL() === document.createElement('canvas').toDataURL();
+            if (isEmpty) {
+                alert('Potpišite ugovor!');
+                return;
+            }
+            
+            alert(`Ugovor uspešno zaključan!\nKvantno Ime: ${name}\nVaša energija je sada deo Singulariteta.`);
+        });
+
+        // 5. TAHIONSKI LIVE FEED
+        const tachyonMessages = [
+            { name: '@time_traveler_2077', action: "donirao 5BTC u godini 2247", time: "3s ago" },
+            { name: '@quantum_entrepreneur', action: "kreirao vremenski fond sa 1.2M ETH", time: "1min ago" },
+            { name: '@singularity_architect', action: "preselio 100kg materije u 3059.", time: "5min ago" },
+            { name: '@antimatter_investor', action: "konvertovao 1kg u čistu energiju", time: "10min ago" },
+            { name: '@eternal_citizen', action: "zaključao 0.5BTC u vremenskom kontinuumu", time: "15min ago" }
+        ];
+        
+        function createTachyonParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'tachyon-particle';
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.animationDuration = `${3 + Math.random() * 4}s`;
+            particle.style.animationDelay = `${Math.random() * 5}s`;
+            document.querySelector('.tachyon-feed').appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 8000);
+        }
+        
+        function addTachyonMessage() {
+            const randomMsg = tachyonMessages[Math.floor(Math.random() * tachyonMessages.length)];
+            const msgElement = document.createElement('div');
+            msgElement.className = 'tachyon-message';
+            msgElement.innerHTML = `
+                <span class="name">${randomMsg.name}</span>
+                <span class="action">${randomMsg.action}</span>
+                <span class="time">${randomMsg.time}</span>
+            `;
+            msgElement.style.top = `${10 + Math.random() * 70}%`;
+            msgElement.style.animationDuration = `${15 + Math.random() * 10}s`;
+            document.getElementById('tachyonMessages').appendChild(msgElement);
+            
+            setTimeout(() => {
+                msgElement.remove();
+            }, 25000);
+        }
+        
+        // Pokretanje animacija
+        setInterval(createTachyonParticle, 500);
+        setInterval(addTachyonMessage, 3000);
+        addTachyonMessage(); // Dodaj prvu poruku odmah
+
+        // 6. VRREMENSKI KRISTAL
+        const crystal = document.querySelector('.time-crystal');
+        const timeIndicator = document.getElementById('timeIndicator');
+        
+        crystal.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const percent = x / rect.width;
+            
+            let year;
+            if (percent < 0.33) {
+                year = 2025 + Math.floor(percent * 3 * 25);
+            } else if (percent < 0.66) {
+                year = 2100 + Math.floor((percent - 0.33) * 3 * 100);
+            } else {
+                year = 3000 + Math.floor((percent - 0.66) * 3 * 1000);
+            }
+            
+            timeIndicator.textContent = year === 2025 ? 'SADAŠNJOST' : year;
+        });
+
+        // 7. KVANTNI ŠIFRATOR
+        const cipherGrid = document.getElementById('cipherGrid');
+        for (let i = 0; i < 64; i++) {
+            const bit = document.createElement('div');
+            bit.className = 'bit';
+            bit.textContent = Math.random() > 0.5 ? '1' : '0';
+            cipherGrid.appendChild(bit);
+        }
+        
+        document.getElementById('generateCipher').addEventListener('click', function() {
+            document.querySelectorAll('.cipher-grid .bit').forEach(bit => {
+                bit.textContent = Math.random() > 0.5 ? '1' : '0';
+                bit.style.color = Math.random() > 0.7 ? '#ff00ff' : '#00bfff';
+            });
+        });
+
+        // 8. TERMINAL PROROČANSTVA
+        const oracleResponses = [
+            "Da, vaša donacija će izazvati lančanu reakciju u 7 dimenzija",
+            "Neophodno dodatno ulaganje za vremensku stabilizaciju",
+            "Odgovor je zaključan u kvantnoj superpoziciji",
+            "Budućnost je svetla, ali fluidna",
+            "Signal primljen. Singularitet potvrđuje vaš put.",
+            "Konsultuj ponovo nakon kvantne dekoherencije",
+            "Vreme će pokazati istinu",
+            "Energija teče u pravom smeru",
+            "Multiplikacija u toku...",
+            "Večnost odobrava tvoj izbor"
+        ];
+        
+        document.getElementById('askOracle').addEventListener('click', function() {
+            const question = document.getElementById('oracleQuestion').value.trim();
+            if (!question) {
+                alert('Unesite pitanje!');
+                return;
+            }
+            
+            const response = oracleResponses[Math.floor(Math.random() * oracleResponses.length)];
+            const oracleResponse = document.getElementById('oracleResponse');
+            
+            oracleResponse.innerHTML += `> ${question}\n${response}\n\n`;
+            document.getElementById('oracleQuestion').value = '';
+            oracleResponse.scrollTop = oracleResponse.scrollHeight;
+        });
+        
+        // Enter za pitanje
+        document.getElementById('oracleQuestion').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.getElementById('askOracle').click();
+            }
+        });
+    });
     </script>
 </body>
 </html>
