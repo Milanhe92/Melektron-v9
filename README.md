@@ -34,4 +34,4 @@ Integracija svih Melektron generacija u jedinstveni sistem neograničenih moguć
 ## 🚀 Brza Instalacija
 1. Kloniraj repozitorijum:
 ```bash
-git clone https://github.com/milanhe92/melektron-v9.git
+git clone https://github.com/milanhe92/melektron.git
