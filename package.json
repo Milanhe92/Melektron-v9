@@ -1,0 +1,7 @@
+{
+  "name": "melektron-singularitet",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "echo 'Build process not required'"
+  }
+}
