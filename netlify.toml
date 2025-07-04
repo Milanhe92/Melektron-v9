@@ -6,15 +6,23 @@
 [build.environment]
   NODE_VERSION = "22"
 
-# Next.js plugin (ispravna sintaksa)
+# Next.js plugin
 [[plugins]]
   package = "@netlify/plugin-nextjs"
   [plugins.inputs]
     version = "5.11.4"
 
-# Dodajte samo ako koristite ove plugine
+# Dodatni plugin samo ako ga koristite
 # [[plugins]]
 #   package = "netlify-plugin-launchdarkly"
-# 
-# [[plugins]]
-#   package = "netlify-plugin-content-security-policy"
+
+# Redirect za HTML fajlove
+[[redirects]]
+  from = "/donacije"
+  to = "/donacije.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
