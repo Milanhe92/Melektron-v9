@@ -1,0 +1,89 @@
+<section class="dashboard">
+  <div class="crypto-summary">
+    <div class="summary-card">
+      <h3>Ukupno Donirano (24h)</h3>
+      <p class="value">4.8 TON</p>
+      <p class="sub-value">≈ $24.50</p>
+    </div>
+    
+    <div class="summary-card">
+      <h3>Rudarski Pool</h3>
+      <p class="value">2.4 PH/s</p>
+      <p class="sub-value">1,824 rudara</p>
+    </div>
+    
+    <div class="summary-card">
+      <h3>Zajednica</h3>
+      <p class="value">5,248 članova</p>
+      <p class="sub-value">+124 novih (24h)</p>
+    </div>
+  </div>
+  
+  <div class="crypto-charts">
+    <div class="chart-container">
+      <h3>Donacije po Valutama</h3>
+      <canvas id="donationChart"></canvas>
+    </div>
+    
+    <div class="chart-container">
+      <h3>Rudarski Hashrate (7 dana)</h3>
+      <canvas id="miningChart"></canvas>
+    </div>
+  </div>
+  
+  <div class="recent-activity">
+    <h3>Najnovije Transakcije</h3>
+    <div class="transaction-list">
+      <div class="transaction">
+        <span class="amount">+0.5 TON</span>
+        <span class="wallet">TON: UQCEE...ntEUm</span>
+        <span class="time">2 min ago</span>
+      </div>
+      <div class="transaction">
+        <span class="amount">+0.02 ETH</span>
+        <span class="wallet">ETH: 0x25F6...6f6C7</span>
+        <span class="time">17 min ago</span>
+      </div>
+      <div class="transaction">
+        <span class="amount">+0.001 BTC</span>
+        <span class="wallet">BTC: bc1q...k300</span>
+        <span class="time">1 sat ago</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Dashboard Charts
+  const donationChart = new Chart(
+    document.getElementById('donationChart'),
+    {
+      type: 'doughnut',
+      data: {
+        labels: ['TON', 'ETH', 'BTC', 'USDT', 'BNB'],
+        datasets: [{
+          data: [48, 25, 15, 8, 4],
+          backgroundColor: [
+            '#0088CC', '#627EEA', '#F7931A', '#26A17B', '#F0B90B'
+          ]
+        }]
+      }
+    }
+  );
+  
+  const miningChart = new Chart(
+    document.getElementById('miningChart'),
+    {
+      type: 'line',
+      data: {
+        labels: ['Pon', 'Uto', 'Sre', 'Čet', 'Pet', 'Sub', 'Ned'],
+        datasets: [{
+          label: 'TH/s',
+          data: [1.8, 2.0, 2.1, 2.3, 2.4, 2.4, 2.4],
+          borderColor: '#8a2be2',
+          tension: 0.3
+        }]
+      }
+    }
+  );
+</script>
