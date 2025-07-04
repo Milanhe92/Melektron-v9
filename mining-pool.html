@@ -1,0 +1,55 @@
+<section class="mining-hero">
+  <h1>TON Rudarski Pool</h1>
+  <p>Pridružite se našem ekskluzivnom TON rudarskom poolu</p>
+  
+  <div class="pool-config">
+    <div class="config-card">
+      <h3>Stratum Server</h3>
+      <code>stratum+ssl://ton.melektron-pool.com:443</code>
+    </div>
+    
+    <div class="wallet-config">
+      <h3>Vaš TON Novčanik za Isplate</h3>
+      <div class="wallet-address">
+        <span>UQCDSWH9N691SfTsu7IoLfP3PRipFofpJbX9Z8V8Qj-5sSmF</span>
+        <button onclick="copyToClipboard('pool-wallet')">Kopiraj</button>
+      </div>
+      <div id="pool-wallet-qr"></div>
+    </div>
+    
+    <div class="pool-stats">
+      <div class="stat-card">
+        <h3>2.4 PH/s</h3>
+        <p>Ukupna Snaga Mreže</p>
+      </div>
+      <div class="stat-card">
+        <h3>1.8%</h3>
+        <p>Pool Naknada</p>
+      </div>
+      <div class="stat-card">
+        <h3>24/7</h3>
+        <p>Podrška i Monitoring</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="start-mining">
+    <h2>Kako Započeti</h2>
+    <ol>
+      <li>Preuzmite TON Mining Software</li>
+      <li>Konfigurišite sa našim serverom</li>
+      <li>Postavite svoj TON novčanik</li>
+      <li>Započnite rudarenje!</li>
+    </ol>
+    <a href="https://github.com/ton-community/ton-miner" class="cta-button">Preuzmi Miner</a>
+  </div>
+</section>
+
+<script>
+  // QR for mining pool wallet
+  new QRious({
+    element: document.getElementById('pool-wallet-qr'),
+    value: 'UQCDSWH9N691SfTsu7IoLfP3PRipFofpJbX9Z8V8Qj-5sSmF',
+    size: 180
+  });
+</script>
