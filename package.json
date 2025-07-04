@@ -1,10 +1,15 @@
 {
   "name": "melektron",
   "version": "1.0.0",
+  "private": true,
   "scripts": {
-    "build": "echo 'Build process not required'"
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "14.1.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   }
-}
-"scripts": {
-  "build": "next build"
 }
