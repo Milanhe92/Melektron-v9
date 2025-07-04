@@ -68,3 +68,12 @@ curl -X POST -d {} https://api.netlify.com/build_hooks/685f8be0fbb8c10fd91f9d05
     0% { width: 0%; opacity: 0; }
     100% { width: 100%; opacity: 1; }
 }
+:root {
+  --quantum-purple: #8a2be2;
+  --antimatter-blue: #00bfff;
+  --singularity-gold: #ffd700;
+  --dark-universe: #0a0a18;
+  --neural-network: #ff00ff;
+  --revenue-green: #00ff9d;
+  --impact-orange: #ff7b00;
+}
