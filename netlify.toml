@@ -12,6 +12,12 @@
   REACT_APP_INFURA_KEY = "your_infura_key"
   REACT_APP_ALCHEMY_KEY = "your_alchemy_key"
 
+[build]
+  command = "npm run build"
+  publish = ".next"  # Za Next.js standardni build
+  # ILI
+  publish = "out"    # Ako koristite `next export`
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
