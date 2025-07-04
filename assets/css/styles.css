@@ -1,3 +1,70 @@
 /* CSS fajlovi će biti dodati kasnije */
 curl -X POST -d {} https://api.netlify.com/build_hooks/685f8be0fbb8c10fd91f9d05
 /* Dodati sve CSS stilove iz prethodnog index.html fajla */
+/* DONACIONA SEKCIJA */
+.donation-section { padding-top: 4rem; }
+.donation-grid { 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+.donation-card {
+    background: rgba(20, 30, 50, 0.7);
+    border: 1px solid var(--quantum-purple);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+.donation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(138, 43, 226, 0.4);
+}
+.donation-item {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    position: relative;
+}
+.item-address {
+    word-break: break-all;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+    color: var(--singularity-gold);
+}
+.quantum-link {
+    color: var(--antimatter-blue);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--antimatter-blue);
+}
+.copy-button {
+    background: rgba(138, 43, 226, 0.2);
+    border: 1px solid var(--quantum-purple);
+    color: var(--antimatter-blue);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: all 0.3s;
+    font-family: 'Orbitron';
+}
+.copy-button:hover {
+    background: rgba(138, 43, 226, 0.4);
+    transform: scale(1.05);
+}
+
+/* ANIMACIJA KONVERZIJE */
+.conversion-beam {
+    height: 8px;
+    background: linear-gradient(90deg, #8a2be2, #00bfff, #ffd700);
+    margin: 2rem auto;
+    border-radius: 5px;
+    width: 0%;
+    animation: beamExpand 3s forwards;
+}
+@keyframes beamExpand {
+    0% { width: 0%; opacity: 0; }
+    100% { width: 100%; opacity: 1; }
+}
