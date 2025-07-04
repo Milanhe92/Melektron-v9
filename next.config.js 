@@ -1,0 +1,8 @@
+// next.config.js
+module.exports = {
+  output: 'export', // Za statički sajt
+  images: {
+    unoptimized: true, // Isključi optimizaciju slika
+  },
+  trailingSlash: true, // Dodaje / na kraju URL-ova
+};
