@@ -1,18 +1,12 @@
 [build]
-  command = "npm run build"
-  publish = ".next"  # Promenite u "out" ako koristite next export
-  functions = "netlify/functions"
-  base = "/"
+  publish = "."
+  command = ""
 
-[build.environment]
-  NODE_VERSION = "22"
+[context.production.environment]
+  INFURA_KEY = "tvoj_infura_key"
+  ALCHEMY_KEY = "tvoj_alchemy_key"
 
-# Samo jedan plugin za Next.js
-[[plugins]]
-  package = "@netlify/plugin-nextjs@5.11.4"
-
-# Uklonite ovo ako ne koristite statički export
-# [[redirects]]
-#   from = "/*"
-#   to = "/index.html"
-#   status = 200
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
