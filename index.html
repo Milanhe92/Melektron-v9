@@ -358,7 +358,7 @@
     
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="logo quantum-gradient-text">MELEKTRON v9</div>
+        <div class="logo quantum-gradient-text">MELEKTRON</div>
         <h1 class="tagline quantum-gradient-text">SINGULARITET - KONAČNA TAČKA EVOLUCIJE</h1>
         <p class="subtitle">Integracija svih Melektron generacija | 24+ tokova prihoda | Kvantna ekonomija milijardi</p>
         <div class="hero-buttons">
@@ -368,6 +368,62 @@
         </div>
     </section>
     <!-- DONACIONA SEKCIJA -->
+<!-- Add this in donation section -->
+<div class="qr-grid">
+  <!-- TON (Telegram) -->
+  <div class="qr-card">
+    <h3><img src="assets/img/ton-logo.svg" alt="TON"> Telegram TON</h3>
+    <div id="ton-tg-qr"></div>
+    <p id="ton-tg-address">UQCDSWH9N691SfTsu7IoLfP3PRipFofpJbX9Z8V8Qj-5sSmF</p>
+    <button onclick="copyToClipboard('ton-tg-address')">Kopiraj</button>
+  </div>
+  
+  <!-- TON (Web3 Gateway) -->
+  <div class="qr-card">
+    <h3><img src="assets/img/ton-logo.svg" alt="TON"> TON Web3 Gateway</h3>
+    <div id="ton-gateway-qr"></div>
+    <p id="ton-gateway-address">UQDeo4mU9UneETjpPR6pzNg-NigHKbLhOyQYukTactm3w-vt</p>
+    <button onclick="copyToClipboard('ton-gateway-address')">Kopiraj</button>
+  </div>
+  
+  <!-- Ethereum -->
+  <div class="qr-card">
+    <h3><img src="assets/img/eth-logo.svg" alt="ETH"> Ethereum</h3>
+    <div id="eth-qr"></div>
+    <p id="eth-address">0x25F6cce406a05E2a9013c51Fc01E14b39a46f6C7</p>
+    <button onclick="copyToClipboard('eth-address')">Kopiraj</button>
+  </div>
+  
+  <!-- BTC -->
+  <div class="qr-card">
+    <h3><img src="assets/img/btc-logo.svg" alt="BTC"> Bitcoin</h3>
+    <div id="btc-qr"></div>
+    <p id="btc-address">bc1q9nnryk45w5aauc4g08pjun4hy9vdxecxsywwlw</p>
+    <button onclick="copyToClipboard('btc-address')">Kopiraj</button>
+  </div>
+</div>
+
+<script>
+  // QR generation with your addresses
+  const addresses = {
+    'ton-tg': 'UQCDSWH9N691SfTsu7IoLfP3PRipFofpJbX9Z8V8Qj-5sSmF',
+    'ton-gateway': 'UQDeo4mU9UneETjpPR6pzNg-NigHKbLhOyQYukTactm3w-vt',
+    'eth': '0x25F6cce406a05E2a9013c51Fc01E14b39a46f6C7',
+    'btc': 'bc1q9nnryk45w5aauc4g08pjun4hy9vdxecxsywwlw'
+  };
+
+  Object.entries(addresses).forEach(([id, address]) => {
+    new QRious({
+      element: document.getElementById(`${id}-qr`),
+      value: address,
+      size: 150,
+      backgroundAlpha: 0,
+      foreground: '#8a2be2',
+      level: 'H'
+    });
+  });
+</script>
+
 <section class="section donation-section" id="donationForm">
     <h2 class="section-title quantum-gradient-text">NAČINI ULAGANJA U VEČNOST</h2>
     
