@@ -6,13 +6,18 @@
 [build.environment]
   NODE_VERSION = "22"
 
-# Ispravljena Next.js plugin konfiguracija
 [[plugins]]
-  package = "@netlify/plugin-nextjs"
-  # Uklonjen inputs blok sa verzijom
+  package = "@netlify/plugin-nextjs"  # ✅ bez verzije
 
-# Redirect pravila
+[[plugins]]
+  package = "@netlify/plugin-emails"  # ✅ ako koristiš email funkcije
+
 [[redirects]]
   from = "/donacije"
   to = "/donacije.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
   status = 200
