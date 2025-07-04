@@ -1,7 +1,10 @@
 {
-  "name": "melektron-singularitet",
+  "name": "melektron",
   "version": "1.0.0",
   "scripts": {
     "build": "echo 'Build process not required'"
   }
+}
+"scripts": {
+  "build": "next build"
 }
