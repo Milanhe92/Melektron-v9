@@ -367,7 +367,67 @@
             <button class="portal-button" onclick="scrollToSection('future')">Dalja Izgradnja</button>
         </div>
     </section>
+    <!-- DONACIONA SEKCIJA -->
+<section class="section donation-section" id="donationForm">
+    <h2 class="section-title quantum-gradient-text">NAČINI ULAGANJA U VEČNOST</h2>
     
+    <div class="donation-grid">
+        <!-- KARTICA 1: STANDARDNI NAČINI -->
+        <div class="revenue-card">
+            <h3 class="revenue-title">Standardni Načini</h3>
+            <div class="donation-item">
+                <p><strong>PayPal:</strong> 
+                    <a href="https://paypal.me/Milanhe92" target="_blank" class="quantum-link">
+                        paypal.me/Milanhe92
+                    </a>
+                </p>
+            </div>
+            <div class="donation-item">
+                <p><strong>Banka:</strong> Raiffeisen Banka</p>
+                <p class="item-address">Primalac: Milan He</p>
+                <p id="bank-acc" class="item-address">Račun: 26500000697144633</p>
+                <button class="copy-button" onclick="copyToClipboard('bank-acc')">Kopiraj</button>
+            </div>
+        </div>
+
+        <!-- KARTICA 2: GLAVNE KRIPTOVALUTE -->
+        <div class="revenue-card">
+            <h3 class="revenue-title">Glavne Kriptovalute</h3>
+            <div class="donation-item">
+                <p><strong>Bitcoin (BTC):</strong></p>
+                <p id="btc-addr" class="item-address">bc1qqelv59tq8yfeufpgj6q48k83qr568ghkh0z8ny9wg039vcfdteyslyk300</p>
+                <button class="copy-button" onclick="copyToClipboard('btc-addr')">Kopiraj</button>
+            </div>
+            <div class="donation-item">
+                <p><strong>Ethereum (ERC-20):</strong></p>
+                <p id="eth-addr" class="item-address">0xb0816abb1c38cc1956231f7d0677b054680b2f2c</p>
+                <button class="copy-button" onclick="copyToClipboard('eth-addr')">Kopiraj</button>
+            </div>
+        </div>
+
+        <!-- KARTICA 3: OSTALE MREŽE -->
+        <div class="revenue-card">
+            <h3 class="revenue-title">Ostale Mreže</h3>
+            <div class="donation-item">
+                <p><strong>BNB Smart Chain (BEP20):</strong></p>
+                <p id="bnb-addr" class="item-address">0x7a41F1824f53461f64894BaA3Fb0907577a0479b</p>
+                <button class="copy-button" onclick="copyToClipboard('bnb-addr')">Kopiraj</button>
+            </div>
+            <div class="donation-item">
+                <p><strong>TON:</strong></p>
+                <p id="ton-addr" class="item-address">UQCDSWH9N691SfTsu7IoLfP3PRipFofpJbX9Z8V8Qj-5sSmF</p>
+                <button class="copy-button" onclick="copyToClipboard('ton-addr')">Kopiraj</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- KVANTNI EFEKAT -->
+    <div class="quantum-effect" id="quantumEffect" style="display:none; text-align:center; margin-top:2rem;">
+        <h3 class="quantum-gradient-text">ENERGIJA PRIMLJENA!</h3>
+        <p>Vaša donacija se konvertuje u kvantni kapital</p>
+        <div class="conversion-beam"></div>
+    </div>
+</section>
     <!-- Revenue Streams -->
     <section id="revenue" class="section">
         <div class="container">
