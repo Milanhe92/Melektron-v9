@@ -127,3 +127,20 @@ document.querySelectorAll('.donation-item a').forEach(link => {
         }, 1500);
     });
 });
+document.querySelector('.portal-button[href="index.html"]').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    // Animacija prelaska do donacione sekcije
+    document.getElementById('donationForm').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+    
+    // Dodatni vizuelni efekat
+    document.querySelectorAll('.donation-card').forEach((card, i) => {
+        setTimeout(() => {
+            card.style.transform = 'scale(1.05)';
+            setTimeout(() => card.style.transform = '', 500);
+        }, i * 200);
+    });
+});
