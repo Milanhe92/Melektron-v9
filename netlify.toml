@@ -11,3 +11,7 @@
 [context.production.environment]
   REACT_APP_INFURA_KEY = "your_infura_key"
   REACT_APP_ALCHEMY_KEY = "your_alchemy_key"
+
+[build]
+  command = "npm run build"
+  publish = "."
