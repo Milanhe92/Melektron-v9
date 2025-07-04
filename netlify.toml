@@ -6,23 +6,13 @@
 [build.environment]
   NODE_VERSION = "22"
 
-# Next.js plugin
+# Ispravljena Next.js plugin konfiguracija
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-  [plugins.inputs]
-    version = "5.11.4"
+  # Uklonjen inputs blok sa verzijom
 
-# Dodatni plugin samo ako ga koristite
-# [[plugins]]
-#   package = "netlify-plugin-launchdarkly"
-
-# Redirect za HTML fajlove
+# Redirect pravila
 [[redirects]]
   from = "/donacije"
   to = "/donacije.html"
-  status = 200
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
   status = 200
