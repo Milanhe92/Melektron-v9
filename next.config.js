@@ -6,3 +6,7 @@ module.exports = {
   },
   trailingSlash: true, // Dodaje / na kraju URL-ova
 };
+module.exports = {
+  output: 'export',
+  distDir: 'out',
+}
