@@ -4,7 +4,11 @@
   functions = "netlify/functions"
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "22"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs@5.11.4"
+
+[context.production.environment]
+  NEXT_PUBLIC_INFURA_KEY = "your_infura_key"
+  NEXT_PUBLIC_ALCHEMY_KEY = "your_alchemy_key"
