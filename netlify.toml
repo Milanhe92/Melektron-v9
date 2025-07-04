@@ -6,9 +6,15 @@
 [build.environment]
   NODE_VERSION = "22"
 
+# Next.js plugin (ispravna sintaksa)
 [[plugins]]
-  package = "@netlify/plugin-nextjs@5.11.4"
+  package = "@netlify/plugin-nextjs"
+  [plugins.inputs]
+    version = "5.11.4"
 
-[context.production.environment]
-  NEXT_PUBLIC_INFURA_KEY = "your_infura_key"
-  NEXT_PUBLIC_ALCHEMY_KEY = "your_alchemy_key"
+# Dodajte samo ako koristite ove plugine
+# [[plugins]]
+#   package = "netlify-plugin-launchdarkly"
+# 
+# [[plugins]]
+#   package = "netlify-plugin-content-security-policy"
