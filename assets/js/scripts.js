@@ -144,3 +144,42 @@ document.querySelector('.portal-button[href="index.html"]').addEventListener('cl
         }, i * 200);
     });
 });
+// DODAJTE U POSTOJEĆI <script> TAG
+function copyToClipboard(elementId) {
+    const el = document.getElementById(elementId);
+    const text = el.innerText;
+    
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = el.nextElementSibling || el.parentElement.querySelector('.copy-button');
+        const originalText = btn.innerText;
+        
+        btn.innerText = "✓ Kopirano!";
+        btn.style.background = "rgba(0, 255, 157, 0.2)";
+        btn.style.borderColor = "var(--revenue-green)";
+        
+        // Prikaz kvantnog efekta
+        const quantumEffect = document.getElementById('quantumEffect');
+        quantumEffect.style.display = 'block';
+        
+        setTimeout(() => {
+            btn.innerText = originalText;
+            btn.style.background = "rgba(138, 43, 226, 0.2)";
+            btn.style.borderColor = "var(--quantum-purple)";
+            quantumEffect.style.display = 'none';
+        }, 3000);
+    });
+}
+
+// LINKOVI ZA DIREKTNU DONACIJU
+document.querySelectorAll('.donation-item a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const quantumEffect = document.getElementById('quantumEffect');
+        quantumEffect.style.display = 'block';
+        
+        setTimeout(() => {
+            window.open(this.href, '_blank');
+            quantumEffect.style.display = 'none';
+        }, 1500);
+    });
+});
