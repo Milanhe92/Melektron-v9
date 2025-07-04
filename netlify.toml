@@ -1,12 +1,10 @@
 [build]
-  publish = "."
-  command = ""
+  command = "npm run build"
+  publish = ".next"
+  functions = "netlify/functions"
 
-[context.production.environment]
-  INFURA_KEY = "tvoj_infura_key"
-  ALCHEMY_KEY = "tvoj_alchemy_key"
+[build.environment]
+  NODE_VERSION = "18"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+[[plugins]]
+  package = "@netlify/plugin-nextjs@5.11.4"
