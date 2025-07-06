@@ -1,2 +1,6 @@
 http://melektron.com/* https://melektron.com/:splat 301!
+[[redirects]]
+  from = "/donacije"
+  to = "/donacije.html"
+  status = 200
 
