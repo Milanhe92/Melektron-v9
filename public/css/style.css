@@ -1,0 +1,148 @@
+/* CSS fajlovi će biti dodati kasnije */
+curl -X POST -d {} https://api.netlify.com/build_hooks/685f8be0fbb8c10fd91f9d05
+/* Dodati sve CSS stilove iz prethodnog index.html fajla */
+/* DONACIONA SEKCIJA */
+.donation-section { padding-top: 4rem; }
+.donation-grid { 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+.donation-card {
+    background: rgba(20, 30, 50, 0.7);
+    border: 1px solid var(--quantum-purple);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+.donation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(138, 43, 226, 0.4);
+}
+.donation-item {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    position: relative;
+}
+.item-address {
+    word-break: break-all;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+    color: var(--singularity-gold);
+}
+.quantum-link {
+    color: var(--antimatter-blue);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--antimatter-blue);
+}
+.copy-button {
+    background: rgba(138, 43, 226, 0.2);
+    border: 1px solid var(--quantum-purple);
+    color: var(--antimatter-blue);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: all 0.3s;
+    font-family: 'Orbitron';
+}
+.copy-button:hover {
+    background: rgba(138, 43, 226, 0.4);
+    transform: scale(1.05);
+}
+
+/* ANIMACIJA KONVERZIJE */
+.conversion-beam {
+    height: 8px;
+    background: linear-gradient(90deg, #8a2be2, #00bfff, #ffd700);
+    margin: 2rem auto;
+    border-radius: 5px;
+    width: 0%;
+    animation: beamExpand 3s forwards;
+}
+@keyframes beamExpand {
+    0% { width: 0%; opacity: 0; }
+    100% { width: 100%; opacity: 1; }
+}
+:root {
+  --quantum-purple: #8a2be2;
+  --antimatter-blue: #00bfff;
+  --singularity-gold: #ffd700;
+  --dark-universe: #0a0a18;
+  --neural-network: #ff00ff;
+  --revenue-green: #00ff9d;
+  --impact-orange: #ff7b00;
+}
+/* ===== QUANTUM ANNOUNCEMENT STYLES ===== */
+.quantum-announcement {
+  background: rgba(10, 10, 24, 0.85);
+  border: 1px solid #8a2be2;
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 3rem auto;
+  max-width: 1200px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.pulse-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(138,43,226,0.3) 0%, transparent 70%);
+  animation: pulse 3s infinite;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+  100% { opacity: 0.3; transform: scale(1); }
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.feature-card {
+  background: rgba(20, 20, 40, 0.7);
+  border-radius: 15px;
+  padding: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  border: 1px solid #8a2be2;
+}
+
+.countdown {
+  margin: 2rem 0;
+  font-size: 1.2rem;
+}
+
+#web3-countdown {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin: 1rem 0;
+}
+
+#web3-countdown span {
+  display: inline-block;
+  min-width: 50px;
+  background: rgba(138,43,226,0.2);
+  padding: 5px 10px;
+  border-radius: 8px;
+  margin: 0 5px;
+}
