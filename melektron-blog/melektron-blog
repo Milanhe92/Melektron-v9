@@ -1,0 +1,2 @@
+mkdir app
+touch app/layout.js app/page.js
