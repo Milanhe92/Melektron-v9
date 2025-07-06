@@ -10,3 +10,12 @@ module.exports = {
   output: 'export',
   distDir: 'out',
 }
+module.exports = {
+  experimental: {
+    allowedDevOrigins: [
+      "https://*.replit.dev",
+      "https://*.replit.app",
+      "http://localhost:3000"
+    ]
+  }
+};
