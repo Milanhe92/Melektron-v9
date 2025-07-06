@@ -7,3 +7,28 @@
   --revenue-green: #00ff9d;
   --impact-orange: #ff7b00;
 }
+.universal-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px 0;
+    background: rgba(20, 20, 40, 0.7);
+    border-bottom: 1px solid #8a2be2;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-link {
+    color: #e0e0ff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background: rgba(138, 43, 226, 0.2);
+    transform: translateY(-2px);
+}
