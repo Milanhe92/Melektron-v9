@@ -9,8 +9,7 @@
   }
 
   async generateQuantumKey() {
-    const response = await fetch(`${this.entropySource}/get`);
-    const entropy = await response.json();
-    return entropy.random;
-  }
+    console.log("NAPOMENA: Koristi se lokalni, a ne kvantni generator.");
+    // Vraćamo običan nasumični broj umesto da zovemo ugašeni servis.
+    return Math.random().toString(36).substring(2);
 }
