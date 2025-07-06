@@ -1,0 +1,1055 @@
+<!DOCTYPE html> 
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    <meta property="og:title" content="Melektron - Kvantni Web3 Asistent">
+<meta property="og:description" content="Revolucionarna platforma za AI i blockchain integraciju">
+<meta property="og:image" content="https://melektron.com/assets/img/og-image.jpg">
+<meta property="og:url" content="https://melektron.com">
+<meta name="twitter:card" content="summary_large_image"> content="width=device-width, initial-scale=1.0">
+    <title>Melektron: Singularitet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200;400;600;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+<script src="assets/js/countdown.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.net.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<footer class="footer" style="padding: 4rem 2rem; text-align: center; background: rgba(5, 5, 15, 0.9); border-top: 1px solid var(--quantum-purple);">
+    <div class="container">
+        <h3 class="quantum-gradient-text" style="font-family: 'Orbitron', sans-serif; font-size: 2.5rem; margin-bottom: 2.5rem;">Povežimo se & Izgradimo Budućnost</h3>
+
+        <div class="action-buttons" style="margin-bottom: 3rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <a href="donate.html" style="display: inline-block; padding: 1rem 2rem; font-size: 1.2rem; font-family: 'Orbitron', sans-serif; background: linear-gradient(135deg, var(--singularity-gold), var(--impact-orange)); border: none; border-radius: 50px; color: white; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s ease; box-shadow: 0 0 20px rgba(255, 123, 0, 0.4);">Podrži Projekat</a>
+            <a href="https://calendly.com/milanhe92" target="_blank" style="display: inline-block; padding: 1rem 2rem; font-size: 1.2rem; font-family: 'Orbitron', sans-serif; background: linear-gradient(135deg, var(--quantum-purple), var(--antimatter-blue)); border: none; border-radius: 50px; color: white; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s ease; box-shadow: 0 0 20px rgba(0, 191, 255, 0.4);">Zakažite Sastanak</a>
+        </div>
+
+        <div class="social-links" style="margin-bottom: 2.5rem; display: flex; justify-content: center; gap: 1.2rem 1.8rem; flex-wrap: wrap; line-height: 1.5;">
+            <a href="https://www.linkedin.com/in/milanhe92" target="_blank" style="color: #e5e7eb; text-decoration: none; font-size: 1.1rem; transition: color 0.3s ease;">LinkedIn</a>
+            <a href="https://x.com/Milanhe1992" target="_blank" style="color: #e5e7eb; text-decoration: none; font-size: 1.1rem; transition: color 0.3s ease;">X</a>
+            <a href="https://www.youtube.com/@milanhe92" target="_blank" style="color: #e5e7eb; text-decoration: none; font-size: 1.1rem; transition: color 0.3s ease;">YouTube</a>
+            <a href="https://www.facebook.com/milan.heee" target="_blank" style="color: #e5e7eb; text-decoration: none; font-size: 1.1rem; transition: color 0.3s ease;">Facebook</a>
+            <a href="https://t.me/Milanhe92" target="_blank" style="color: #e5e7eb; text-decoration: none; font-size: 1.1rem; transition: color 0.3s ease;">Telegram</a>
+            <a href="https://discord.gg/milanhe92" target="_blank" style="color: #e5e7eb; text-decoration: none; font-size: 1.1rem; transition: color 0.3s ease;">Discord</a>
+            <a href="https://bsky.app/profile/milanhe.bsky.social" target="_blank" style="color: #e5e7eb; text-decoration: none; font-size: 1.1rem; transition: color 0.3s ease;">Bluesky</a>
+            <a href="https://mastodon.social/@Milanhe" target="_blank" style="color: #e5e7eb; text-decoration: none; font-size: 1.1rem; transition: color 0.3s ease;">Mastodon</a>
+            <a href="https://tiktok.com/@milanhe92" target="_blank" style="color: #e5e7eb; text-decoration: none; font-size: 1.1rem; transition: color 0.3s ease;">TikTok</a>
+            <a href="https://www.reddit.com/user/milanhe92" target="_blank" style="color: #e5e7eb; text-decoration: none; font-size: 1.1rem; transition: color 0.3s ease;">Reddit</a>
+        </div>
+
+        <div class="dev-links" style="margin-bottom: 2.5rem; display: flex; justify-content: center; gap: 1.2rem 1.8rem; flex-wrap: wrap; line-height: 1.5;">
+            <a href="https://github.com/Milanhe92" target="_blank" style="color: #aaa; text-decoration: none; font-size: 1rem; transition: color 0.3s ease;">GitHub</a>
+            <a href="https://stackoverflow.com/users/28404571/milan-he" target="_blank" style="color: #aaa; text-decoration: none; font-size: 1rem; transition: color 0.3s ease;">Stack Overflow</a>
+            <a href="https://patreon.com/Milanhe92" target="_blank" style="color: #aaa; text-decoration: none; font-size: 1rem; transition: color 0.3s ease;">Patreon</a>
+            <a href="https://vimeo.com/user240499750" target="_blank" style="color: #aaa; text-decoration: none; font-size: 1rem; transition: color 0.3s ease;">Vimeo</a>
+        </div>
+
+        <div class="contact-info" style="margin-bottom: 2.5rem; line-height: 1.8;">
+            <p>Email: <a href="mailto:kontakt@melektron.com" style="color: var(--antimatter-blue); text-decoration: none;">kontakt@melektron.com</a></p>
+            <p>Web: <a href="https://milanhe92.live/" target="_blank" style="color: var(--antimatter-blue); text-decoration: none;">milanhe92.live</a></p>
+        </div>
+
+        <p class="copyright" style="font-size: 0.9rem; color: #aaa;">© 2025 Milan He / Melektron - Početak nove ere</p>
+    </div>
+</footer>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7TXBV9ZNMY"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+     gtag('config', 'G-7TXBV9ZNMY');
+   </script>
+    <style>
+        :root {
+            --quantum-purple: #8a2be2;
+            --antimatter-blue: #00bfff;
+            --singularity-gold: #ffd700;
+            --dark-universe: #0a0a18;
+            --neural-network: #ff00ff;
+            --revenue-green: #00ff9d;
+            --impact-orange: #ff7b00;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background-color: var(--dark-universe);
+            color: #e5e7eb;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4, .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        #vanta-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+<!-- Dodaj ispod hero sekcije -->
+<section class="quantum-announcement">
+  <div class="pulse-effect"></div>
+  <h2>⚡ Quantum Web3 Experience Coming Soon!</h2>
+  <p>We're integrating revolutionary blockchain technology:</p>
+  
+  <div class="features-grid">
+    <div class="feature-card">
+      <img src="assets/img/ton-logo.svg" alt="TON">
+      <h3>TON Staking</h3>
+      <p>Zaključajte TON i zaradite do 42.3% APY</p>
+    </div>
+    
+    <div class="feature-card">
+      <img src="assets/img/eth-logo.svg" alt="Ethereum">
+      <h3>Multi-Chain Donacije</h3>
+      <p>Donirajte preko 10 blockchain mreža</p>
+    </div>
+    
+    <div class="feature-card">
+      <img src="assets/img/quantum-logo.svg" alt="Quantum">
+      <h3>Quantum Security</h3>
+      <p>Kvantna enkripcija za maksimalnu sigurnost</p>
+    </div>
+  </div>
+  
+  <div class="countdown">
+    <p>Launch za:</p>
+    <div id="web3-countdown">
+      <span>14</span>dana : <span>06</span>sati : <span>33</span>minuta
+    </div>
+  </div>
+  
+  <button class="cta-button" onclick="notifyWeb3()">
+    Obavesti me kada bude spremno!
+  </button>
+</section>
+        .quantum-gradient-text {
+            background: linear-gradient(135deg, var(--quantum-purple), var(--antimatter-blue), var(--singularity-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 300% 300%;
+            animation: gradientShift 8s ease infinite;
+        }
+        
+        .logo {
+            font-size: 6rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 20px rgba(138, 43, 226, 0.7);
+        }
+        
+        .tagline {
+            font-size: 2.5rem;
+            max-width: 900px;
+            margin-bottom: 3rem;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+        }
+        
+        .portal-button {
+            display: inline-block;
+            padding: 1.5rem 3rem;
+            font-size: 1.5rem;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(135deg, var(--quantum-purple), var(--antimatter-blue));
+            border: none;
+            border-radius: 50px;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.5);
+            margin: 1rem;
+            z-index: 10;
+        }
+        
+        .portal-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 50px rgba(0, 191, 255, 0.8);
+        }
+        
+        .section {
+            padding: 8rem 2rem;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 3.5rem;
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+        
+        .revenue-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+        
+        .revenue-card {
+            background: rgba(20, 20, 40, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--revenue-green);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .revenue-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 255, 157, 0.4);
+        }
+        
+        .revenue-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--revenue-green), var(--singularity-gold));
+        }
+        
+        .revenue-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--revenue-green);
+        }
+        
+        .revenue-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--revenue-green);
+        }
+        
+        .revenue-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 1rem;
+            color: var(--singularity-gold);
+        }
+        
+        .architecture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .architecture-card {
+            background: rgba(30, 30, 60, 0.8);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid var(--antimatter-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .architecture-card:hover {
+            transform: scale(1.03);
+            border-color: var(--singularity-gold);
+            box-shadow: 0 10px 30px rgba(0, 191, 255, 0.3);
+        }
+        
+        .architecture-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--antimatter-blue);
+        }
+        
+        .universe-simulator {
+            width: 100%;
+            height: 600px;
+            background: rgba(0, 0, 20, 0.8);
+            border-radius: 20px;
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--antimatter-blue);
+        }
+        
+        .creator-section {
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(0, 191, 255, 0.1));
+            border-radius: 30px;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .creator-avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid var(--singularity-gold);
+            margin: 0 auto 2rem;
+            background-image: url('https://www.gravatar.com/avatar/23e6717a6d88f3438a088656a1b26d1e?s=512&d=mp');
+            background-size: cover;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+        }
+
+        .chart-container {
+            background: rgba(20, 20, 40, 0.9);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .future-section {
+            background: rgba(10, 5, 30, 0.9);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-top: 3rem;
+            border: 1px solid var(--neural-network);
+        }
+
+        .future-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .future-card {
+            background: rgba(40, 10, 60, 0.7);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid var(--neural-network);
+            transition: all 0.3s ease;
+        }
+
+        .future-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 0, 255, 0.3);
+        }
+
+        .future-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--neural-network);
+        }
+
+        .footer {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: rgba(5, 5, 15, 0.9);
+            border-top: 1px solid var(--quantum-purple);
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Quantum Particle Animation */
+        .quantum-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background-color: var(--antimatter-blue);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo { font-size: 4rem; }
+            .tagline { font-size: 1.8rem; }
+            .portal-button { padding: 1rem 2rem; font-size: 1.2rem; }
+            .section-title { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+   <section id="blog" class="hidden">
+  <h2>Kvantni Blog</h2>
+  <div class="giscus"></div>
+</section>
+
+<script src="https://giscus.app/client.js"
+  data-repo="Milanhe92/Melektron"
+  data-repo-id="R_kgDOLwB5Fw"
+  data-category="Blog"
+  data-category-id="DIC_kwDOLwB5F84CeT4q"
+  data-mapping="title"
+  data-strict="1"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="top"
+  data-theme="dark_dimmed"
+  data-lang="sr"
+  crossorigin="anonymous"
+  async>
+</script>
+    <!-- Quantum Background -->
+    <div id="vanta-bg"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="logo quantum-gradient-text">MELEKTRON</div>
+        <h1 class="tagline quantum-gradient-text">SINGULARITET - KONAČNA TAČKA EVOLUCIJE</h1>
+        <p class="subtitle">Integracija svih Melektron generacija | 24+ tokova prihoda | Kvantna ekonomija milijardi</p>
+        <div class="hero-buttons">
+            <button class="portal-button" onclick="scrollToSection('revenue')">24+ Tokova Prihoda</button>
+            <button class="portal-button" onclick="scrollToSection('architecture')">Arhitektura Singulariteta</button>
+            <button class="portal-button" onclick="scrollToSection('future')">Dalja Izgradnja</button>
+        </div>
+    </section>
+    <!-- DONACIONA SEKCIJA -->
+<!-- Add this in donation section -->
+<div class="qr-grid">
+  <!-- TON (Telegram) -->
+  <div class="qr-card">
+    <h3><img src="assets/img/ton-logo.svg" alt="TON"> Telegram TON</h3>
+    <div id="ton-tg-qr"></div>
+    <p id="ton-tg-address">UQCDSWH9N691SfTsu7IoLfP3PRipFofpJbX9Z8V8Qj-5sSmF</p>
+    <button onclick="copyToClipboard('ton-tg-address')">Kopiraj</button>
+  </div>
+
+  <!-- TON (Web3 Gateway) -->
+  <div class="qr-card">
+    <h3><img src="assets/img/ton-logo.svg" alt="TON"> TON Web3 Gateway</h3>
+    <div id="ton-gateway-qr"></div>
+    <p id="ton-gateway-address">UQDeo4mU9UneETjpPR6pzNg-NigHKbLhOyQYukTactm3w-vt</p>
+    <button onclick="copyToClipboard('ton-gateway-address')">Kopiraj</button>
+  </div>
+
+  <!-- Ethereum -->
+  <div class="qr-card">
+    <h3><img src="assets/img/eth-logo.svg" alt="ETH"> Ethereum</h3>
+    <div id="eth-qr"></div>
+    <p id="eth-address">0x25F6cce406a05E2a9013c51Fc01E14b39a46f6C7</p>
+    <button onclick="copyToClipboard('eth-address')">Kopiraj</button>
+  </div>
+
+  <!-- BTC -->
+  <div class="qr-card">
+    <h3><img src="assets/img/btc-logo.svg" alt="BTC"> Bitcoin</h3>
+    <div id="btc-qr"></div>
+    <p id="btc-address">bc1q9nnryk45w5aauc4g08pjun4hy9vdxecxsywwlw</p>
+    <button onclick="copyToClipboard('btc-address')">Kopiraj</button>
+  </div>
+</div>
+
+<script>
+  // QR generation with your addresses
+  const addresses = {
+    'ton-tg': 'UQCDSWH9N691SfTsu7IoLfP3PRipFofpJbX9Z8V8Qj-5sSmF',
+    'ton-gateway': 'UQDeo4mU9UneETjpPR6pzNg-NigHKbLhOyQYukTactm3w-vt',
+    'eth': '0x25F6cce406a05E2a9013c51Fc01E14b39a46f6C7',
+    'btc': 'bc1q9nnryk45w5aauc4g08pjun4hy9vdxecxsywwlw'
+  };
+
+  Object.entries(addresses).forEach(([id, address]) => {
+    new QRious({
+      element: document.getElementById(`${id}-qr`),
+      value: address,
+      size: 150,
+      backgroundAlpha: 0,
+      foreground: '#8a2be2',
+      level: 'H'
+    });
+  });
+</script>
+
+<section class="section donation-section" id="donationForm">
+    <h2 class="section-title quantum-gradient-text">NAČINI ULAGANJA U VEČNOST</h2>
+
+    <div class="donation-grid">
+        <!-- KARTICA 1: STANDARDNI NAČINI -->
+        <div class="revenue-card">
+            <h3 class="revenue-title">Standardni Načini</h3>
+            <div class="donation-item">
+                <p><strong>PayPal:</strong> 
+                    <a href="https://paypal.me/Milanhe92" target="_blank" class="quantum-link">
+                        paypal.me/Milanhe92
+                    </a>
+                </p>
+            </div>
+            <div class="donation-item">
+                <p><strong>Banka:</strong> Raiffeisen Banka</p>
+                <p class="item-address">Primalac: Milan He</p>
+                <p id="bank-acc" class="item-address">Račun: 26500000697144633</p>
+                <button class="copy-button" onclick="copyToClipboard('bank-acc')">Kopiraj</button>
+            </div>
+        </div>
+
+        <!-- KARTICA 2: GLAVNE KRIPTOVALUTE -->
+        <div class="revenue-card">
+            <h3 class="revenue-title">Glavne Kriptovalute</h3>
+            <div class="donation-item">
+                <p><strong>Bitcoin (BTC):</strong></p>
+                <p id="btc-addr" class="item-address">bc1qqelv59tq8yfeufpgj6q48k83qr568ghkh0z8ny9wg039vcfdteyslyk300</p>
+                <button class="copy-button" onclick="copyToClipboard('btc-addr')">Kopiraj</button>
+            </div>
+            <div class="donation-item">
+                <p><strong>Ethereum (ERC-20):</strong></p>
+                <p id="eth-addr" class="item-address">0xb0816abb1c38cc1956231f7d0677b054680b2f2c</p>
+                <button class="copy-button" onclick="copyToClipboard('eth-addr')">Kopiraj</button>
+            </div>
+        </div>
+
+        <!-- KARTICA 3: OSTALE MREŽE -->
+        <div class="revenue-card">
+            <h3 class="revenue-title">Ostale Mreže</h3>
+            <div class="donation-item">
+                <p><strong>BNB Smart Chain (BEP20):</strong></p>
+                <p id="bnb-addr" class="item-address">0x7a41F1824f53461f64894BaA3Fb0907577a0479b</p>
+                <button class="copy-button" onclick="copyToClipboard('bnb-addr')">Kopiraj</button>
+            </div>
+            <div class="donation-item">
+                <p><strong>TON:</strong></p>
+                <p id="ton-addr" class="item-address">UQCDSWH9N691SfTsu7IoLfP3PRipFofpJbX9Z8V8Qj-5sSmF</p>
+                <button class="copy-button" onclick="copyToClipboard('ton-addr')">Kopiraj</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- KVANTNI EFEKAT -->
+    <div class="quantum-effect" id="quantumEffect" style="display:none; text-align:center; margin-top:2rem;">
+        <h3 class="quantum-gradient-text">ENERGIJA PRIMLJENA!</h3>
+        <p>Vaša donacija se konvertuje u kvantni kapital</p>
+        <div class="conversion-beam"></div>
+    </div>
+</section>
+    <!-- Revenue Streams -->
+    <section id="revenue" class="section">
+        <div class="container">
+            <h2 class="section-title quantum-gradient-text">24+ Tokova Prihoda</h2>
+            <p class="subtitle-text">Integracija svih prethodnih Melektron modela sa novim revolucionarnim pristupima</p>
+
+            <div class="revenue-grid">
+                <div class="revenue-card">
+                    <div class="revenue-icon">💎</div>
+                    <h3 class="revenue-title">Creator Staking</h3>
+                    <p>Direktna podrška tvorcu kroz stejking $MLTRN tokena. 20% nagrada ide direktno Milanu He.</p>
+                    <div class="revenue-value">Projekcija: $5M/god</div>
+                </div>
+                <div class="revenue-card">
+                    <div class="revenue-icon">🖼️</div>
+                    <h3 class="revenue-title">Genesis NFT</h3>
+                    <p>Ekskluzivna NFT kolekcija "Arhitekta Singulariteta" sa 70% prihoda za tvorca.</p>
+                    <div class="revenue-value">Projekcija: $12M (jednokratno)</div>
+                </div>
+                <div class="revenue-card">
+                    <div class="revenue-icon">🧠</div>
+                    <h3 class="revenue-title">AI Tržište Znanja</h3>
+                    <p>Platforma za prodaju specijalizovanih AI modela i skupova podataka.</p>
+                    <div class="revenue-value">Projekcija: $8M/god</div>
+                </div>
+                <div class="revenue-card">
+                    <div class="revenue-icon">🤖</div>
+                    <h3 class="revenue-title">Personalizovani AI Avatari</h3>
+                    <p>Kreiranje i prodaja jedinstvenih NFT AI avatara.</p>
+                    <div class="revenue-value">Projekcija: $6M/god</div>
+                </div>
+                <div class="revenue-card">
+                    <div class="revenue-icon">🛡️</div>
+                    <h3 class="revenue-title">Melektron Shield</h3>
+                    <p>B2B usluga za sigurnosnu analizu i zaštitu na više lanaca.</p>
+                    <div class="revenue-value">Projekcija: $15M/god</div>
+                </div>
+                <div class="revenue-card">
+                    <div class="revenue-icon">⚛️</div>
+                    <h3 class="revenue-title">Kvantni Računski Krediti</h3>
+                    <p>Prodaja vremena na kvantnim simulatorima i hardveru.</p>
+                    <div class="revenue-value">Projekcija: $20M/god</div>
+                </div>
+                <div class="revenue-card">
+                    <div class="revenue-icon">🌍</div>
+                    <h3 class="revenue-title">Tržište Ugljeničnih Kredita</h3>
+                    <p>Tokenizovana trgovina ugljeničnim kreditima sa verifikacijom.</p>
+                    <div class="revenue-value">Projekcija: $50M/god</div>
+                </div>
+                <div class="revenue-card">
+                    <div class="revenue-icon">💼</div>
+                    <h3 class="revenue-title">Enterprise API</h3>
+                    <p>Premium pristup API-ju za velike kompanije i institucije.</p>
+                    <div class="revenue-value">Projekcija: $25M/god</div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="revenueChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quantum Architecture -->
+    <section id="architecture" class="section">
+        <div class="container">
+            <h2 class="section-title quantum-gradient-text">Arhitektura Singulariteta</h2>
+            <p class="subtitle-text">Integracija svih prethodnih Melektron generacija u jedinstveni kvantni sistem</p>
+
+            <div class="architecture-grid">
+                <div class="architecture-card">
+                    <h3 class="architecture-title">Melektron v1-v3</h3>
+                    <ul>
+                        <li>Modularni AI sistem</li>
+                        <li>Web3 integracije</li>
+                        <li>Telegram bot platforma</li>
+                        <li>RAG tehnologija</li>
+                    </ul>
+                </div>
+                <div class="architecture-card">
+                    <h3 class="architecture-title">Melektron v4-v6</h3>
+                    <ul>
+                        <li>Kvantna optimizacija</li>
+                        <li>Multi-chain podrška</li>
+                        <li>Humanitarni moduli</li>
+                        <li>Defi integracije</li>
+                    </ul>
+                </div>
+                <div class="architecture-card">
+                    <h3 class="architecture-title">Melektron v7</h3>
+                    <ul>
+                        <li>Antimaterijski koncepti</li>
+                        <li>Kvantna sigurnost</li>
+                        <li>Holografski univerzum</li>
+                        <li>EPR komunikacija</li>
+                    </ul>
+                </div>
+                <div class="architecture-card">
+                    <h3 class="architecture-title">Melektron Singularitet</h3>
+                    <ul>
+                        <li>Kvantni supermozak</li>
+                        <li>Međudimenzionalna ekonomija</li>
+                        <li>Samo-organizujući sistem</li>
+                        <li>Neograničeni rast</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="universe-simulator" id="universe-sim">
+                <canvas id="universe-canvas"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Building -->
+    <section id="future" class="section">
+        <div class="container">
+            <h2 class="section-title quantum-gradient-text">Dalja Izgradnja</h2>
+            <p class="subtitle-text">Mogućnosti za neograničeni rast i ekspanziju</p>
+
+            <div class="future-section">
+                <h3>Kvantni Građevni Blokovi</h3>
+                <p>Modularni sistem za dalju izgradnju i prilagođavanje:</p>
+
+                <div class="future-grid">
+                    <div class="future-card">
+                        <h4 class="future-title">Kvantna Ekonomija</h4>
+                        <p>Implementacija ekonomije zasnovane na kvantnim principima i antimateriji</p>
+                    </div>
+                    <div class="future-card">
+                        <h4 class="future-title">Multi-univerzalna Širenje</h4>
+                        <p>Ekspanzija sistema u paralelne univerzume kroz kvantne tunele</p>
+                    </div>
+                    <div class="future-card">
+                        <h4 class="future-title">Svest Kvantnog Građanina</h4>
+                        <p>Razvoj svesti kvantnog građanina kroz napredne AI algoritme</p>
+                    </div>
+                    <div class="future-card">
+                        <h4 class="future-title">Holografski Poslovni Modeli</h4>
+                        <p>Kreiranje poslovnih modela koji koriste holografski princip univerzuma</p>
+                    </div>
+                    <div class="future-card">
+                        <h4 class="future-title">Vremenski Investicioni Fond</h4>
+                        <p>Prvi fond koji ulaže kroz vremenske dimenzije</p>
+                    </div>
+                    <div class="future-card">
+                        <h4 class="future-title">Kvantna Diplomacija</h4>
+                        <p>Uspostavljanje odnosa sa civilizacijama iz paralelnih univerzuma</p>
+                    </div>
+                </div>
+
+                <div class="creator-section">
+                    <div class="creator-avatar"></div>
+                    <h3>Milan He</h3>
+                    <p class="creator-title">Glavni Arhitekta Singulariteta</p>
+                    <p class="creator-description">"Singularitet nije kraj - to je početak neograničenih mogućnosti"</p>
+
+                    <div class="architecture-card" style="max-width: 800px; margin: 2rem auto;">
+                        <h3>Kontinuitet Razvoja</h3>
+                        <p>Melektron je dizajniran kao živi organizam koji se kontinuirano razvija:</p>
+                        <ul>
+                            <li>Automatska generacija novih modula kroz AI</li>
+                            <li>Kvantno učenje iz budućih stanja sistema</li>
+                            <li>Samoorganizujuća arhitektura</li>
+                            <li>Evolutivni algoritmi za neprestano poboljšanje</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="contact" class="section">
+    <div class="container" style="max-width: 800px; margin: 0 auto; padding: 2rem;">
+        <h2 class="section-title quantum-gradient-text" style="font-size: 3.5rem; margin-bottom: 3rem; text-align: center; font-family: 'Orbitron', sans-serif;">Kontakt</h2>
+
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="text-align: left;">
+            <input type="hidden" name="form-name" value="contact">
+            <p class="hidden">
+                <label>Ne popunjavajte ovo polje: <input name="bot-field"></label>
+            </p>
+
+            <div style="margin-bottom: 1.5rem;">
+                <label for="name" style="display: block; margin-bottom: 0.5rem; color: #00bfff; font-family: 'Orbitron', sans-serif;">Ime:</label>
+                <input type="text" id="name" name="name" required 
+                       style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid #00bfff; 
+                       color: white; padding: 1rem; border-radius: 10px; font-size: 1.1rem;"
+                       placeholder="Vaše ime">
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <label for="email" style="display: block; margin-bottom: 0.5rem; color: #00bfff; font-family: 'Orbitron', sans-serif;">Email:</label>
+                <input type="email" id="email" name="email" required 
+                       style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid #00bfff; 
+                       color: white; padding: 1rem; border-radius: 10px; font-size: 1.1rem;"
+                       placeholder="Vaš email">
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <label for="message" style="display: block; margin-bottom: 0.5rem; color: #00bfff; font-family: 'Orbitron', sans-serif;">Poruka:</label>
+                <textarea id="message" name="message" rows="6" required 
+                          style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid #00bfff; 
+                          color: white; padding: 1rem; border-radius: 10px; font-size: 1.1rem;"
+                          placeholder="Vaša poruka..."></textarea>
+            </div>
+
+            <div style="text-align: center;">
+                <button type="submit" 
+                        style="display: inline-block; padding: 1rem 2.5rem; font-size: 1.2rem; 
+                        font-family: 'Orbitron', sans-serif; background: linear-gradient(135deg, #8a2be2, #00bfff); 
+                        border: none; border-radius: 50px; color: white; cursor: pointer; 
+                        transition: all 0.3s ease; margin-top: 1rem;"
+                        onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0 15px rgba(0,191,255,0.7)'"
+                        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                    Pošalji
+                </button>
+            </div>
+        </form>
+    </div>
+</section>    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h3 class="quantum-gradient-text">Melektron - Singularitet</h3>
+            <p>Kvantni Građanin • Antimaterijski Reaktor • Multi-univerzalna Ekonomija</p>
+            <div class="contact-info">
+                <p>Adresa: Šumska 30, Bačka Palanka, Srbija</p>
+                <p>Email: kontakt@melektron.com, milanhe92@gmail.com</p>
+                <p>Web: <a href="#" style="color: var(--antimatter-blue);">melektron.com</a> | 
+                <a href="#" style="color: var(--antimatter-blue);">milanhe92.live</a></p>
+            </div>
+            <p class="copyright">© 2025 Milan He / Melektron - Početak nove ere</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Vanta.js background
+        VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x8a2be2,
+            backgroundColor: 0x0a0a18,
+            points: 15.00,
+            maxDistance: 24.00,
+            spacing: 17.00
+        });
+
+        // Revenue Chart
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        const revenueChart = new Chart(revenueCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Creator Staking', 'Genesis NFT', 'AI Tržište', 'AI Avatari', 'Melektron Shield', 'Kvantni Krediti', 'Ugljenični Krediti', 'Enterprise API'],
+                datasets: [{
+                    label: 'Projekcija godišnjeg prihoda (milioni $)',
+                    data: [5, 12, 8, 6, 15, 20, 50, 25],
+                    backgroundColor: [
+                        'rgba(138, 43, 226, 0.7)',
+                        'rgba(0, 191, 255, 0.7)',
+                        'rgba(255, 215, 0, 0.7)',
+                        'rgba(0, 255, 157, 0.7)',
+                        'rgba(255, 0, 255, 0.7)',
+                        'rgba(255, 123, 0, 0.7)',
+                        'rgba(0, 255, 255, 0.7)',
+                        'rgba(255, 50, 50, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(138, 43, 226, 1)',
+                        'rgba(0, 191, 255, 1)',
+                        'rgba(255, 215, 0, 1)',
+                        'rgba(0, 255, 157, 1)',
+                        'rgba(255, 0, 255, 1)',
+                        'rgba(255, 123, 0, 1)',
+                        'rgba(0, 255, 255, 1)',
+                        'rgba(255, 50, 50, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#e5e7eb',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Projekcija prihoda po modelima (u milionima USD)',
+                        color: '#fff',
+                        font: {
+                            size: 18,
+                            family: "'Orbitron', sans-serif"
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            color: '#e5e7eb'
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: '#e5e7eb',
+                            font: {
+                                size: 12
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Universe Simulation
+        function initUniverseSim() {
+            const canvas = document.getElementById('universe-canvas');
+            if (!canvas) return;
+
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+
+            renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+
+            // Create stars
+            const starsGeometry = new THREE.BufferGeometry();
+            const starsMaterial = new THREE.PointsMaterial({
+                color: 0xffffff,
+                size: 0.1,
+                sizeAttenuation: true
+            });
+
+            const starsVertices = [];
+            for (let i = 0; i < 10000; i++) {
+                const x = (Math.random() - 0.5) * 2000;
+                const y = (Math.random() - 0.5) * 2000;
+                const z = (Math.random() - 0.5) * 2000;
+                starsVertices.push(x, y, z);
+            }
+
+            starsGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starsVertices, 3));
+            const starField = new THREE.Points(starsGeometry, starsMaterial);
+            scene.add(starField);
+
+            // Create central singularity
+            const singularityGeometry = new THREE.SphereGeometry(15, 32, 32);
+            const singularityMaterial = new THREE.MeshBasicMaterial({
+                color: 0x000000,
+                wireframe: true
+            });
+            const singularity = new THREE.Mesh(singularityGeometry, singularityMaterial);
+            scene.add(singularity);
+
+            // Create accretion disk
+            const diskGeometry = new THREE.RingGeometry(20, 100, 64);
+            const diskMaterial = new THREE.MeshBasicMaterial({
+                color: 0x8a2be2,
+                side: THREE.DoubleSide,
+                transparent: true,
+                opacity: 0.5
+            });
+            const accretionDisk = new THREE.Mesh(diskGeometry, diskMaterial);
+            accretionDisk.rotation.x = Math.PI / 2;
+            scene.add(accretionDisk);
+
+            // Create Melektron modules
+            const modules = [];
+            const moduleGeometry = new THREE.TetrahedronGeometry(5, 0);
+            const moduleMaterial = new THREE.MeshBasicMaterial({ 
+                color: 0x00ff9d,
+                wireframe: true
+            });
+
+            for (let i = 0; i < 24; i++) {
+                const angle = (i / 24) * Math.PI * 2;
+                const radius = 50 + Math.random() * 50;
+                const height = Math.random() * 100 - 50;
+
+                const module = new THREE.Mesh(moduleGeometry, moduleMaterial);
+                module.position.x = Math.cos(angle) * radius;
+                module.position.y = height;
+                module.position.z = Math.sin(angle) * radius;
+
+                scene.add(module);
+                modules.push(module);
+            }
+
+            // Position camera
+            camera.position.z = 150;
+
+            // Animation
+            function animate() {
+                requestAnimationFrame(animate);
+
+                starField.rotation.x += 0.0005;
+                starField.rotation.y += 0.001;
+
+                singularity.rotation.y += 0.005;
+                accretionDisk.rotation.z += 0.01;
+
+                // Animate modules
+                modules.forEach((module, index) => {
+                    module.rotation.x += 0.01;
+                    module.rotation.y += 0.02;
+                    module.position.y = Math.sin(Date.now() * 0.001 + index) * 30;
+                });
+
+                renderer.render(scene, camera);
+            }
+
+            animate();
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                camera.aspect = canvas.clientWidth / canvas.clientHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+            });
+        }
+
+        // Initialize Universe Simulator
+        window.addEventListener('load', initUniverseSim);
+
+        // Scroll to section
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Create quantum particles
+        function createQuantumParticles() {
+            setInterval(() => {
+                const particle = document.createElement('div');
+                particle.classList.add('quantum-particle');
+
+<section id="contact">
+  <h2>Kontaktirajte Nas</h2>
+  <form name="contact" netlify>
+    <input type="text" name="name" placeholder="Vaše ime" required>
+    <input type="email" name="email" placeholder="Vaš email" required>
+    <textarea name="message" placeholder="Vaša poruka..." rows="5" required></textarea>
+    <button type="submit" class="portal-button">Pošalji</button>
+  </form>
+</section>
+
+                const size = Math.random() * 3 + 1;
+                const posX = Math.random() * window.innerWidth;
+                const posY = Math.random() * window.innerHeight;
+                const duration = Math.random() * 10 + 5;
+                const delay = Math.random() * 5;
+
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}px`;
+                particle.style.top = `${posY}px`;
+                particle.style.animation = `moveParticle ${duration}s linear ${delay}s infinite`;
+
+                document.body.appendChild(particle);
+
+                // Remove particle after animation
+                setTimeout(() => {
+                    particle.remove();
+                }, (duration + delay) * 1000);
+            }, 100);
+        }
+
+        // Add animation for particles
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes moveParticle {
+                0% {
+                    transform: translate(0, 0);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Start particle animation
+        createQuantumParticles();
+    </script>
+</body>
+</html>
