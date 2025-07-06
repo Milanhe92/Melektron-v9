@@ -115,7 +115,6 @@
             overflow: hidden;
         }
         
-<!-- Dodaj ispod hero sekcije -->
 <section class="quantum-announcement">
   <div class="pulse-effect"></div>
   <h2>⚡ Quantum Web3 Experience Coming Soon!</h2>
@@ -402,6 +401,46 @@
 <body>
    <section id="blog" class="hidden">
   <h2>Kvantni Blog</h2>
+  <div id="quantum-interface">
+  <canvas id="quantum-canvas" width="800" height="600"></canvas>
+  <div class="quantum-controls">
+    <button id="activate-quantum">Aktiviraj Kvantni Režim</button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const quantumBtn = document.getElementById('activate-quantum');
+    
+    quantumBtn.addEventListener('click', () => {
+      // Inicijalizacija kvantnog motora
+      QuantumEngine.init('quantum-canvas');
+      
+      // Sakrij dugme nakon aktivacije
+      quantumBtn.classList.add('hidden');
+      
+      // Prikaz kvantnih kontrola
+      document.querySelector('.quantum-controls').innerHTML = `
+        <button id="quantum-scan">Skeniraj Blockchain</button>
+        <button id="quantum-transact">Kvantna Transakcija</button>
+      `;
+    });
+    
+    // Primer kvantne transakcije
+    document.querySelector('.donation-item').addEventListener('click', async () => {
+      const txData = QuantumEngine.entangleTransaction({
+        to: 'UQCDSWH9N691SfTsu7IoLfP3PRipFofpJbX9Z8V8Qj_5sSmF',
+        amount: 0.5,
+        currency: 'TON'
+      });
+      
+      const txHash = await MelektronTon.sendTransaction(txData.to, txData.amount);
+      if (txHash) {
+        alert(`✅ Kvantna transakcija uspešna!\nHash: ${txHash}`);
+      }
+    });
+  });
+</script>
   <div class="giscus"></div>
 </section>
 
