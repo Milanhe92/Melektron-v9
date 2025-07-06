@@ -1,0 +1,10 @@
+Ovo je placeholder za slike
+<section id="contact">
+  <h2>Kontakt</h2>
+  <form name="contact" netlify>
+    <input type="text" name="name" placeholder="Ime" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" placeholder="Vaša poruka..." required></textarea>
+    <button type="submit">Pošalji</button>
+  </form>
+</section>
